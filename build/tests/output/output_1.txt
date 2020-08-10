@@ -6,18 +6,18 @@ connected to target 0.
 recv data: 
 ===netcomm_type::LMR_ASSIGN_MAPPER
 -------tmp=input_0.txt
-Map Compute Time: 0.001384.
+Map Compute Time: 0.000174.
 dst=0, type=4, data=0
 recv data: 
 ===netcomm_type::LMR_ASSIGN_MAPPER
 -------tmp=input_1.txt
-Map Compute Time: 0.000051.
+Map Compute Time: 0.000052.
 dst=0, type=4, data=1
 recv data: 
 ===netcomm_type::LMR_ASSIGN_MAPPER
 -------tmp=input_2.txt
-Map Compute Time: 0.000051.
+Map Compute Time: 0.000048.
 dst=0, type=4, data=2
 recv data: 
 ===netcomm_type::LMR_CLOSE
-0.052s elapsed.
+0.059s elapsed.

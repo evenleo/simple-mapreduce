@@ -1,5 +1,6 @@
 #include "mapreduce.h"
 #include <iostream>
+#include <memory>
 
 namespace lmr {
 
@@ -72,7 +73,7 @@ void MapReduce::assign_reducer(const string& input_format)
 {
     char tmp[1024];
     ReduceInput ri;
-    Reducer *reducer = CREATE_REDUCER(spec_->reducer_class);
+    std::shared_ptr<Reducer> reducer(REDUCER_CREATE(spec_->reducer_class));
     for (int i = 0; i < spec_->num_inputs; ++i)
     {
         sprintf(tmp, input_format.c_str(), i);
@@ -93,7 +94,6 @@ void MapReduce::assign_reducer(const string& input_format)
     reducer->reducework();
 
     net_->send(0, netcomm_type::LMR_REDUCER_DONE, nullptr, 0);
-    delete reducer;
 }
 
 void MapReduce::reducer_done(int net_index)
@@ -145,9 +145,9 @@ void MapReduce::mapper_done(int net_index, const vector<int>& finished_index)
 
 void MapReduce::assign_mapper(const string& output_format, const vector<int>& input_index)
 {
-    char *tmp = new char[spec_->input_format.size() + 1024];
+    char tmp[1024];
     MapInput mi;
-    Mapper *mapper = CREATE_MAPPER(spec_->mapper_class);
+    std::shared_ptr<Mapper> mapper(MAPPER_CREATE(spec_->mapper_class));
     for (int i : input_index)
     {
         sprintf(tmp, spec_->input_format.c_str(), i);
@@ -163,9 +163,6 @@ void MapReduce::assign_mapper(const string& output_format, const vector<int>& in
     mapper->mapwork();
 
     net_->send(0, netcomm_type::LMR_MAPPER_DONE, form_mapper_done(input_index));
-
-    delete mapper;
-    delete[] tmp;
 }
 
 MapReduce::MapReduce(MapReduceSpecification* spec)

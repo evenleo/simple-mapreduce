@@ -24,7 +24,8 @@ public:
     }
 };
 
-REGISTER_MAPPER(WordCountMapper)
+REGISTER(WordCountMapper)
+
 
 class WordCountReducer : public Reducer
 {
@@ -40,7 +41,8 @@ public:
     }
 };
 
-REGISTER_REDUCER(WordCountReducer)
+REGISTER(WordCountReducer)
+
 
 
 int main(int argc, char **argv)

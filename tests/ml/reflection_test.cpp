@@ -10,7 +10,7 @@ public:
         std::cout << "Base" << std::endl;
     }
 };
-REGISTER(Base);  // 注册
+REGISTER(Base)  // 注册
 
 class DeriveA : public Base {
 public:
@@ -19,7 +19,7 @@ public:
         std::cout << "DeriveA" << std::endl;
     }
 };
-REGISTER(DeriveA);  // 注册
+REGISTER(DeriveA)  // 注册
 
 class DeriveB : public Base {
 public:
@@ -28,7 +28,7 @@ public:
         std::cout << "DeriveB" << std::endl;
     }
 };
-REGISTER(DeriveB);  // 注册
+REGISTER(DeriveB)  // 注册
 
 /**
  * 实例创建宏，返回基类指针，相当于new的作用，需要自己回收
