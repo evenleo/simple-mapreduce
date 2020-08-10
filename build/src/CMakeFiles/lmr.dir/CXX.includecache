@@ -138,12 +138,6 @@ naivebayes.h
 cmath
 -
 
-/home/even/workspace/simple-mapreduce/src/netcomm.cpp
-netcomm.h
-/home/even/workspace/simple-mapreduce/src/netcomm.h
-iostream
--
-
 /home/even/workspace/simple-mapreduce/src/netcomm.h
 string
 -

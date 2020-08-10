@@ -17,12 +17,12 @@ void cb(header* h, char* data, netcomm* net)
             pthread_mutex_lock(&mutex);
             ++number_checkin;
             if (number_checkin % (real_total - 1) == 0)
-                instance->isready = true;
+                instance->isready_ = true;
             pthread_mutex_unlock(&mutex);
             break;
         case netcomm_type::LMR_CLOSE:
             cout << "===netcomm_type::LMR_CLOSE" << endl;
-            instance->stopflag = true;
+            instance->stopflag_ = true;
             break;
         case netcomm_type::LMR_ASSIGN_MAPPER:
             cout << "===netcomm_type::LMR_ASSIGN_MAPPER" << endl;
@@ -55,7 +55,7 @@ inline int MapReduce::net_mapper_index(int i)
 
 inline int MapReduce::net_reducer_index(int i)
 {
-    return i - 1 - spec->num_mappers;
+    return i - 1 - spec_->num_mappers;
 }
 
 inline int MapReduce::mapper_net_index(int i)
@@ -65,15 +65,15 @@ inline int MapReduce::mapper_net_index(int i)
 
 inline int MapReduce::reducer_net_index(int i)
 {
-    return i + 1 + spec->num_mappers;
+    return i + 1 + spec_->num_mappers;
 }
 
 void MapReduce::assign_reducer(const string& input_format)
 {
     char tmp[1024];
     ReduceInput ri;
-    Reducer *reducer = CREATE_REDUCER(spec->reducer_class);
-    for (int i = 0; i < spec->num_inputs; ++i)
+    Reducer *reducer = CREATE_REDUCER(spec_->reducer_class);
+    for (int i = 0; i < spec_->num_inputs; ++i)
     {
         sprintf(tmp, input_format.c_str(), i);
         cout << "tmp=" << tmp << endl;
@@ -81,18 +81,18 @@ void MapReduce::assign_reducer(const string& input_format)
     }
 
     char tmp2[1024];
-    strcpy(tmp2, spec->output_format.c_str());
+    strcpy(tmp2, spec_->output_format.c_str());
     sprintf(tmp, "mkdir -p %s", dirname(tmp2));
     system(tmp); // make output directory
 
-    string outputfile = spec->output_format;
-    sprintf(tmp, outputfile.c_str(), net_reducer_index(index));
+    string outputfile = spec_->output_format;
+    sprintf(tmp, outputfile.c_str(), net_reducer_index(index_));
 
     reducer->set_reduceinput(&ri);
     reducer->set_outputfile(tmp);
     reducer->reducework();
 
-    net->send(0, netcomm_type::LMR_REDUCER_DONE, nullptr, 0);
+    net_->send(0, netcomm_type::LMR_REDUCER_DONE, nullptr, 0);
     delete reducer;
 }
 
@@ -101,18 +101,18 @@ void MapReduce::reducer_done(int net_index)
     bool finished = false;
 
     pthread_mutex_lock(&mutex);
-    if (++reducer_finished_cnt == spec->num_reducers)
+    if (++reducer_finished_cnt_ == spec_->num_reducers)
         finished = true;
     pthread_mutex_unlock(&mutex);
 
     if (finished)
     {
-        fprintf(stderr, "Reduce Time: %fs.\n", duration_cast<duration<double>>(high_resolution_clock::now() - time_cnt).count());
+        fprintf(stderr, "Reduce Time: %fs.\n", duration_cast<duration<double>>(high_resolution_clock::now() - time_cnt_).count());
         fprintf(stderr, "ALL WORK DONE!\n");
         for (int i = 1; i < real_total; ++i)
-            net->send(i, netcomm_type::LMR_CLOSE, nullptr, 0);
+            net_->send(i, netcomm_type::LMR_CLOSE, nullptr, 0);
         system("rm -rf tmp/");
-        stopflag = true;
+        stopflag_ = true;
     }
 }
 
@@ -121,36 +121,36 @@ void MapReduce::mapper_done(int net_index, const vector<int>& finished_index)
     int job_index = -1;
 
     pthread_mutex_lock(&mutex);
-    if (!jobs.empty())
+    if (!jobs_.empty())
     {
-        job_index = jobs.front();
-        jobs.pop();
+        job_index = jobs_.front();
+        jobs_.pop();
     }
-    mapper_finished_cnt += finished_index.size();
-    if (mapper_finished_cnt == spec->num_inputs) // all the mappers finished.
+    mapper_finished_cnt_ += finished_index.size();
+    if (mapper_finished_cnt_ == spec_->num_inputs) // all the mappers finished.
     {
         fprintf(stderr, "ALL MAPPER DONE!\n");
-        fprintf(stderr, "Map Time: %fs.\n", duration_cast<duration<double>>(high_resolution_clock::now() - time_cnt).count());
-        time_cnt = high_resolution_clock::now();
-        for (int i = 0; i < spec->num_reducers; ++i)
-            net->send(reducer_net_index(i), netcomm_type::LMR_ASSIGN_REDUCER,
+        fprintf(stderr, "Map Time: %fs.\n", duration_cast<duration<double>>(high_resolution_clock::now() - time_cnt_).count());
+        time_cnt_ = high_resolution_clock::now();
+        for (int i = 0; i < spec_->num_reducers; ++i)
+            net_->send(reducer_net_index(i), netcomm_type::LMR_ASSIGN_REDUCER,
                     form_assign_reducer(string("tmp/tmp_%d_") + to_string(i) +".txt"));
     }
     pthread_mutex_unlock(&mutex);
 
     if (job_index >= 0)
-        net->send(net_index, netcomm_type::LMR_ASSIGN_MAPPER,
+        net_->send(net_index, netcomm_type::LMR_ASSIGN_MAPPER,
                     form_assign_mapper("tmp/tmp_%d_%d.txt", {job_index}));
 }
 
 void MapReduce::assign_mapper(const string& output_format, const vector<int>& input_index)
 {
-    char *tmp = new char[spec->input_format.size() + 1024];
+    char *tmp = new char[spec_->input_format.size() + 1024];
     MapInput mi;
-    Mapper *mapper = CREATE_MAPPER(spec->mapper_class);
+    Mapper *mapper = CREATE_MAPPER(spec_->mapper_class);
     for (int i : input_index)
     {
-        sprintf(tmp, spec->input_format.c_str(), i);
+        sprintf(tmp, spec_->input_format.c_str(), i);
         cout << "-------tmp=" << tmp << endl;
         mi.add_file(tmp);
     }
@@ -158,45 +158,45 @@ void MapReduce::assign_mapper(const string& output_format, const vector<int>& in
     outputfile.replace(outputfile.find("%d"), 2, to_string(input_index[0]));
 
     mapper->set_mapinput(&mi);
-    mapper->set_numreducer(spec->num_reducers);
+    mapper->set_numreducer(spec_->num_reducers);
     mapper->set_outputfile(outputfile);
     mapper->mapwork();
 
-    net->send(0, netcomm_type::LMR_MAPPER_DONE, form_mapper_done(input_index));
+    net_->send(0, netcomm_type::LMR_MAPPER_DONE, form_mapper_done(input_index));
 
     delete mapper;
     delete[] tmp;
 }
 
-MapReduce::MapReduce(MapReduceSpecification* _spec)
+MapReduce::MapReduce(MapReduceSpecification* spec)
 {
     instance = this;
     setbuf(stdout, nullptr);
     pthread_mutex_init(&mutex, nullptr);
-    set_spec(_spec);
+    set_spec(spec);
 }
 
-void MapReduce::set_spec(MapReduceSpecification *_spec)
+void MapReduce::set_spec(MapReduceSpecification* spec)
 {
-    if (!_spec) return;
-    spec = _spec;
+    if (!spec) return;
+    spec_ = spec;
 
-    total = spec->num_mappers + spec->num_reducers + 1;
-    if (firstspec)
+    total_ = spec_->num_mappers + spec_->num_reducers + 1;
+    if (firstspec_)
     {
-        firstspec = false;
-        real_total = total;
-        index = spec->index;
-        net = new netcomm(spec->config_file, spec->index, cb);
+        firstspec_ = false;
+        real_total = total_;
+        index_ = spec_->index;
+        net_ = new netcomm(spec_->config_file, spec_->index, cb);
     }
 
-    if (total > net->gettotalnum())
+    if (total_ > net_->gettotalnum())
     {
         fprintf(stderr, "Too many mappers and reducers. Please add workers in configuration file.\n");
         exit(1);
     }
 
-    if (spec->num_mappers < 1 || spec->num_reducers < 1)
+    if (spec_->num_mappers < 1 || spec_->num_reducers < 1)
     {
         fprintf(stderr, "Number of both mappers and reducers must be at least one.\n");
         exit(1);
@@ -205,52 +205,52 @@ void MapReduce::set_spec(MapReduceSpecification *_spec)
 
 void MapReduce::start_work()
 {
-    printf("Start word from %d.\n", index);
-    if (!spec)
+    printf("Start word from %d.\n", index_);
+    if (!spec_)
     {
         fprintf(stderr, "No specification.\n");
         exit(1);
     }
 
-    reducer_finished_cnt = mapper_finished_cnt = 0;
+    reducer_finished_cnt_ = mapper_finished_cnt_ = 0;
 
-    if (index > 0)
+    if (index_ > 0)
     {
-        printf("Checkin in %d.\n", index);
-        firstrun = false;
-        net->send(0, netcomm_type::LMR_CHECKIN, nullptr, 0);
+        printf("Checkin in %d.\n", index_);
+        firstrun_ = false;
+        net_->send(0, netcomm_type::LMR_CHECKIN, nullptr, 0);
     }
     else
     {
-        printf("Wait for checkin in %d.\n", index);
-        if (firstrun && !dist_run_files())
+        printf("Wait for checkin in %d.\n", index_);
+        if (firstrun_ && !dist_run_files())
         {
             fprintf(stderr, "distribution error. cannot run workers.\n");
-            net->wait();
+            net_->wait();
             exit(1);
         }
-        firstrun = false;
+        firstrun_ = false;
 
-        for (int i = 0; i < spec->num_inputs; ++i)
-            jobs.push(i);
+        for (int i = 0; i < spec_->num_inputs; ++i)
+            jobs_.push(i);
         system("rm -rf tmp/ && mkdir tmp");
 
-        while (!isready)
+        while (!isready_)
             sleep_us(1000);
-        isready = false;
+        isready_ = false;
 
         printf("All checked in.\n");
-        time_cnt = high_resolution_clock::now();
-        pthread_mutex_lock(&mutex); // protect jobs queue
-        for (int i = 0; i < spec->num_mappers; ++i)
+        time_cnt_ = high_resolution_clock::now();
+        pthread_mutex_lock(&mutex); // protect jobs_ queue
+        for (int i = 0; i < spec_->num_mappers; ++i)
         {
-            if (jobs.empty())
+            if (jobs_.empty())
                 break;
             else
             {
-                net->send(mapper_net_index(i), netcomm_type::LMR_ASSIGN_MAPPER,
-                            form_assign_mapper("tmp/tmp_%d_%d.txt", {jobs.front()}));
-                jobs.pop();
+                net_->send(mapper_net_index(i), netcomm_type::LMR_ASSIGN_MAPPER,
+                            form_assign_mapper("tmp/tmp_%d_%d.txt", {jobs_.front()}));
+                jobs_.pop();
             }
         }
         pthread_mutex_unlock(&mutex);
@@ -259,10 +259,10 @@ void MapReduce::start_work()
 
 MapReduce::~MapReduce()
 {
-    if (net)
+    if (net_)
     {
-        net->wait();
-        delete net;
+        net_->wait();
+        delete net_;
     }
     pthread_mutex_destroy(&mutex);
 }
@@ -271,9 +271,9 @@ int MapReduce::work(MapReduceResult& result)
 {
     time_point<chrono::high_resolution_clock> start = high_resolution_clock::now();
     start_work();
-    while (!stopflag)
+    while (!stopflag_)
         sleep_us(1000);
-    stopflag = false;
+    stopflag_ = false;
     result.timeelapsed = duration_cast<duration<double>>(high_resolution_clock::now() - start).count();
     return 0;
 }
@@ -348,7 +348,7 @@ bool MapReduce::dist_run_files()
     free(tmp);
 
     // get username and password
-    ifstream f(spec->config_file);
+    ifstream f(spec_->config_file);
     getline(f, temp);
     size_t pos = temp.find(':');
     username = temp.substr(0, pos);
@@ -363,14 +363,14 @@ bool MapReduce::dist_run_files()
     // run workers
     unordered_map<string, vector<pair<int,int>>> um;
     for (int i = 1; i < real_total; ++i)
-        um[net->endpoints[i].first].push_back(make_pair(i, net->endpoints[i].second));
+        um[net_->endpoints[i].first].push_back(make_pair(i, net_->endpoints[i].second));
 
     for (auto &p : um)
     {
         string cmd = "cd " + cwd + " && mkdir -p output";
         for (auto &p2 : p.second)
         {
-            cmd += " && (./" + spec->program_file + " " + to_string(p2.first) +
+            cmd += " && (./" + spec_->program_file + " " + to_string(p2.first) +
                     " >& output/output_" + to_string(p2.first) + ".txt &)";
         }
         if (p.first == "127.0.0.1")

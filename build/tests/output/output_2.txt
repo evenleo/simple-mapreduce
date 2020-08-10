@@ -10,4 +10,4 @@ tmp=tmp/tmp_1_0.txt
 tmp=tmp/tmp_2_0.txt
 recv data: 
 ===netcomm_type::LMR_CLOSE
-0.032s elapsed.
+0.050s elapsed.

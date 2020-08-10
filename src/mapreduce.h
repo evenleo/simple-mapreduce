@@ -29,11 +29,11 @@ namespace lmr
     {
         friend void cb(header* h, char* data, netcomm* net);
     public:
-        MapReduce(MapReduceSpecification* _spec = nullptr);
+        MapReduce(MapReduceSpecification* spec = nullptr);
         ~MapReduce();
-        void set_spec(MapReduceSpecification* _spec);
+        void set_spec(MapReduceSpecification* spec);
         int work(MapReduceResult& result);
-        MapReduceSpecification* get_spec() { return spec; }
+        MapReduceSpecification* get_spec() { return spec_; }
 
     private:
         bool dist_run_files();
@@ -48,12 +48,12 @@ namespace lmr
         void assign_reducer(const string& input_format);
         void reducer_done(int net_index);
 
-        bool stopflag = false, isready = false, firstrun = true, firstspec = true;
-        int index, total, mapper_finished_cnt = 0, reducer_finished_cnt = 0;
-        MapReduceSpecification* spec = nullptr;
-        time_point<chrono::high_resolution_clock> time_cnt;
-        netcomm *net = nullptr;
-        queue<int> jobs;
+        bool stopflag_ = false, isready_ = false, firstrun_ = true, firstspec_ = true;
+        int index_, total_, mapper_finished_cnt_ = 0, reducer_finished_cnt_ = 0;
+        MapReduceSpecification* spec_ = nullptr;
+        time_point<chrono::high_resolution_clock> time_cnt_;
+        netcomm *net_ = nullptr;
+        queue<int> jobs_;
     };
 }
 

@@ -60,15 +60,15 @@ include tests/CMakeFiles/netcomm_test.dir/flags.make
 tests/CMakeFiles/netcomm_test.dir/netcomm_test.cpp.o: tests/CMakeFiles/netcomm_test.dir/flags.make
 tests/CMakeFiles/netcomm_test.dir/netcomm_test.cpp.o: ../tests/netcomm_test.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/even/workspace/simple-mapreduce/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/CMakeFiles/netcomm_test.dir/netcomm_test.cpp.o"
-	cd /home/even/workspace/simple-mapreduce/build/tests && /bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/netcomm_test.dir/netcomm_test.cpp.o -c /home/even/workspace/simple-mapreduce/tests/netcomm_test.cpp
+	cd /home/even/workspace/simple-mapreduce/build/tests && /usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/netcomm_test.dir/netcomm_test.cpp.o -c /home/even/workspace/simple-mapreduce/tests/netcomm_test.cpp
 
 tests/CMakeFiles/netcomm_test.dir/netcomm_test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/netcomm_test.dir/netcomm_test.cpp.i"
-	cd /home/even/workspace/simple-mapreduce/build/tests && /bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/even/workspace/simple-mapreduce/tests/netcomm_test.cpp > CMakeFiles/netcomm_test.dir/netcomm_test.cpp.i
+	cd /home/even/workspace/simple-mapreduce/build/tests && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/even/workspace/simple-mapreduce/tests/netcomm_test.cpp > CMakeFiles/netcomm_test.dir/netcomm_test.cpp.i
 
 tests/CMakeFiles/netcomm_test.dir/netcomm_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/netcomm_test.dir/netcomm_test.cpp.s"
-	cd /home/even/workspace/simple-mapreduce/build/tests && /bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/even/workspace/simple-mapreduce/tests/netcomm_test.cpp -o CMakeFiles/netcomm_test.dir/netcomm_test.cpp.s
+	cd /home/even/workspace/simple-mapreduce/build/tests && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/even/workspace/simple-mapreduce/tests/netcomm_test.cpp -o CMakeFiles/netcomm_test.dir/netcomm_test.cpp.s
 
 # Object files for target netcomm_test
 netcomm_test_OBJECTS = \

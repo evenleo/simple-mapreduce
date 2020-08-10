@@ -60,15 +60,15 @@ include tests/CMakeFiles/logisticregression_test.dir/flags.make
 tests/CMakeFiles/logisticregression_test.dir/ml/logisticregression_test.cpp.o: tests/CMakeFiles/logisticregression_test.dir/flags.make
 tests/CMakeFiles/logisticregression_test.dir/ml/logisticregression_test.cpp.o: ../tests/ml/logisticregression_test.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/even/workspace/simple-mapreduce/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/CMakeFiles/logisticregression_test.dir/ml/logisticregression_test.cpp.o"
-	cd /home/even/workspace/simple-mapreduce/build/tests && /bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/logisticregression_test.dir/ml/logisticregression_test.cpp.o -c /home/even/workspace/simple-mapreduce/tests/ml/logisticregression_test.cpp
+	cd /home/even/workspace/simple-mapreduce/build/tests && /usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/logisticregression_test.dir/ml/logisticregression_test.cpp.o -c /home/even/workspace/simple-mapreduce/tests/ml/logisticregression_test.cpp
 
 tests/CMakeFiles/logisticregression_test.dir/ml/logisticregression_test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/logisticregression_test.dir/ml/logisticregression_test.cpp.i"
-	cd /home/even/workspace/simple-mapreduce/build/tests && /bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/even/workspace/simple-mapreduce/tests/ml/logisticregression_test.cpp > CMakeFiles/logisticregression_test.dir/ml/logisticregression_test.cpp.i
+	cd /home/even/workspace/simple-mapreduce/build/tests && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/even/workspace/simple-mapreduce/tests/ml/logisticregression_test.cpp > CMakeFiles/logisticregression_test.dir/ml/logisticregression_test.cpp.i
 
 tests/CMakeFiles/logisticregression_test.dir/ml/logisticregression_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/logisticregression_test.dir/ml/logisticregression_test.cpp.s"
-	cd /home/even/workspace/simple-mapreduce/build/tests && /bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/even/workspace/simple-mapreduce/tests/ml/logisticregression_test.cpp -o CMakeFiles/logisticregression_test.dir/ml/logisticregression_test.cpp.s
+	cd /home/even/workspace/simple-mapreduce/build/tests && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/even/workspace/simple-mapreduce/tests/ml/logisticregression_test.cpp -o CMakeFiles/logisticregression_test.dir/ml/logisticregression_test.cpp.s
 
 # Object files for target logisticregression_test
 logisticregression_test_OBJECTS = \
