@@ -1,0 +1,13 @@
+net_init, index=2, port=9994
+Start word from 2.
+Checkin in 2.
+net_connect, index=0, ip=127.0.0.1, port=9992
+connected to target 0.
+recv data: 
+===netcomm_type::LMR_ASSIGN_REDUCER
+tmp=tmp/tmp_0_0.txt
+tmp=tmp/tmp_1_0.txt
+tmp=tmp/tmp_2_0.txt
+recv data: 
+===netcomm_type::LMR_CLOSE
+0.032s elapsed.

@@ -1,0 +1,1 @@
+External activity (file system operations etc.) is relayed through a virtual interface so users can customize the operating system interactions.

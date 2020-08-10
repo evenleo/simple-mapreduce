@@ -1,0 +1,215 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "src",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "tests",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "tests",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2
+					],
+					"name" : "lmr",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "kmeans_test::@a44f0ac069e85531cdee",
+					"jsonFile" : "target-kmeans_test-Debug-412be46f042b0771f5be.json",
+					"name" : "kmeans_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "linearregression_test::@a44f0ac069e85531cdee",
+					"jsonFile" : "target-linearregression_test-Debug-e7ee7e55f431750c9e91.json",
+					"name" : "linearregression_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "lmr::@145eef247bfb46b6828c",
+					"jsonFile" : "target-lmr-Debug-aad8bcbb19e79764a480.json",
+					"name" : "lmr",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "logisticregression_test::@a44f0ac069e85531cdee",
+					"jsonFile" : "target-logisticregression_test-Debug-1cdf8cf4676801cf66c4.json",
+					"name" : "logisticregression_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "mapinput_test::@a44f0ac069e85531cdee",
+					"jsonFile" : "target-mapinput_test-Debug-6dc5b7e2f2bd3f58928a.json",
+					"name" : "mapinput_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "mapper_test::@a44f0ac069e85531cdee",
+					"jsonFile" : "target-mapper_test-Debug-6715ea76a8cb23d085ec.json",
+					"name" : "mapper_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "mapreduce_hello_test::@a44f0ac069e85531cdee",
+					"jsonFile" : "target-mapreduce_hello_test-Debug-39eb7808a80e74b24b54.json",
+					"name" : "mapreduce_hello_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "mapreduce_test::@a44f0ac069e85531cdee",
+					"jsonFile" : "target-mapreduce_test-Debug-1595b1752a8678d7230d.json",
+					"name" : "mapreduce_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "naivebayes_test::@a44f0ac069e85531cdee",
+					"jsonFile" : "target-naivebayes_test-Debug-665295c0213dedc8cc1c.json",
+					"name" : "naivebayes_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "netcomm_test::@a44f0ac069e85531cdee",
+					"jsonFile" : "target-netcomm_test-Debug-26213a2a5923fb246211.json",
+					"name" : "netcomm_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "reducer_test::@a44f0ac069e85531cdee",
+					"jsonFile" : "target-reducer_test-Debug-1f7c9aa313b7e6f472d7.json",
+					"name" : "reducer_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "reflection_test::@a44f0ac069e85531cdee",
+					"jsonFile" : "target-reflection_test-Debug-2367feffa6b05b3e6620.json",
+					"name" : "reflection_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "register_test::@a44f0ac069e85531cdee",
+					"jsonFile" : "target-register_test-Debug-dc57e050159825d414b0.json",
+					"name" : "register_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "serializer_test::@a44f0ac069e85531cdee",
+					"jsonFile" : "target-serializer_test-Debug-ea640895914802a57178.json",
+					"name" : "serializer_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "test::@a44f0ac069e85531cdee",
+					"jsonFile" : "target-test-Debug-9a275157fae5fcfa6b80.json",
+					"name" : "test",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/even/workspace/simple-mapreduce/build",
+		"source" : "/home/even/workspace/simple-mapreduce"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 0
+	}
+}

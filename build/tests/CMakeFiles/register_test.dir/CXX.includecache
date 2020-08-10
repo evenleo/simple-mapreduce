@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/even/workspace/simple-mapreduce/src/register.h
+unordered_map
+-
+string
+-
+
+/home/even/workspace/simple-mapreduce/tests/register_test.cpp
+../src/register.h
+/home/even/workspace/simple-mapreduce/src/register.h
+iostream
+-
+

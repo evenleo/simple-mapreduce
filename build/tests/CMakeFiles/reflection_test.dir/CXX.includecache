@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/even/workspace/simple-mapreduce/src/reflector.h
+iostream
+-
+unordered_map
+-
+memory
+-
+functional
+-
+
+/home/even/workspace/simple-mapreduce/tests/ml/reflection_test.cpp
+../../src/reflector.h
+/home/even/workspace/simple-mapreduce/src/reflector.h
+

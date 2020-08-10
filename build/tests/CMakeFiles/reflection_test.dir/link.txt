@@ -1,0 +1,1 @@
+/bin/c++   -std=c++14 -g  -rdynamic CMakeFiles/reflection_test.dir/ml/reflection_test.cpp.o  -o reflection_test   -L/usr/local/lib  -L/home/even/private/libssh/lib 

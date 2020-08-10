@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/even/workspace/simple-mapreduce/src/serializer.h
+vector
+-
+algorithm
+-
+memory
+-
+string.h
+-
+
+/home/even/workspace/simple-mapreduce/tests/ml/serializer_test.cpp
+iostream
+-
+../../src/serializer.h
+/home/even/workspace/simple-mapreduce/src/serializer.h
+

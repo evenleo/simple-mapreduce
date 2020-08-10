@@ -1,0 +1,4 @@
+Keys and values are arbitrary byte arrays.
+Data is stored sorted by key.
+Callers can provide a custom comparison function to override the sort order.
+The basic operations are Put(key,value), Get(key), Delete(key).

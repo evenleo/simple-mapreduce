@@ -48,10 +48,10 @@ RM = /usr/local/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/even/workspace/mapreduce-cpp
+CMAKE_SOURCE_DIR = /home/even/workspace/simple-mapreduce
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/even/workspace/mapreduce-cpp/build
+CMAKE_BINARY_DIR = /home/even/workspace/simple-mapreduce/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/even/workspace/mapreduce-cpp/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/even/workspace/mapreduce-cpp/build/CMakeFiles /home/even/workspace/mapreduce-cpp/build/tests/CMakeFiles/progress.marks
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f CMakeFiles/Makefile2 tests/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/even/workspace/mapreduce-cpp/build/CMakeFiles 0
+	cd /home/even/workspace/simple-mapreduce/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/even/workspace/simple-mapreduce/build/CMakeFiles /home/even/workspace/simple-mapreduce/build/tests/CMakeFiles/progress.marks
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f CMakeFiles/Makefile2 tests/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/even/workspace/simple-mapreduce/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f CMakeFiles/Makefile2 tests/clean
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f CMakeFiles/Makefile2 tests/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f CMakeFiles/Makefile2 tests/preinstall
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f CMakeFiles/Makefile2 tests/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f CMakeFiles/Makefile2 tests/preinstall
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f CMakeFiles/Makefile2 tests/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/even/workspace/mapreduce-cpp/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/even/workspace/simple-mapreduce/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 tests/CMakeFiles/reflection_test.dir/rule:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/reflection_test.dir/rule
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/reflection_test.dir/rule
 .PHONY : tests/CMakeFiles/reflection_test.dir/rule
 
 # Convenience name for target.
@@ -122,12 +122,12 @@ reflection_test: tests/CMakeFiles/reflection_test.dir/rule
 
 # fast build rule for target.
 reflection_test/fast:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/reflection_test.dir/build.make tests/CMakeFiles/reflection_test.dir/build
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/reflection_test.dir/build.make tests/CMakeFiles/reflection_test.dir/build
 .PHONY : reflection_test/fast
 
 # Convenience name for target.
 tests/CMakeFiles/logisticregression_test.dir/rule:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/logisticregression_test.dir/rule
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/logisticregression_test.dir/rule
 .PHONY : tests/CMakeFiles/logisticregression_test.dir/rule
 
 # Convenience name for target.
@@ -137,12 +137,12 @@ logisticregression_test: tests/CMakeFiles/logisticregression_test.dir/rule
 
 # fast build rule for target.
 logisticregression_test/fast:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/logisticregression_test.dir/build.make tests/CMakeFiles/logisticregression_test.dir/build
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/logisticregression_test.dir/build.make tests/CMakeFiles/logisticregression_test.dir/build
 .PHONY : logisticregression_test/fast
 
 # Convenience name for target.
 tests/CMakeFiles/linearregression_test.dir/rule:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/linearregression_test.dir/rule
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/linearregression_test.dir/rule
 .PHONY : tests/CMakeFiles/linearregression_test.dir/rule
 
 # Convenience name for target.
@@ -152,12 +152,12 @@ linearregression_test: tests/CMakeFiles/linearregression_test.dir/rule
 
 # fast build rule for target.
 linearregression_test/fast:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/linearregression_test.dir/build.make tests/CMakeFiles/linearregression_test.dir/build
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/linearregression_test.dir/build.make tests/CMakeFiles/linearregression_test.dir/build
 .PHONY : linearregression_test/fast
 
 # Convenience name for target.
 tests/CMakeFiles/kmeans_test.dir/rule:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/kmeans_test.dir/rule
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/kmeans_test.dir/rule
 .PHONY : tests/CMakeFiles/kmeans_test.dir/rule
 
 # Convenience name for target.
@@ -167,12 +167,12 @@ kmeans_test: tests/CMakeFiles/kmeans_test.dir/rule
 
 # fast build rule for target.
 kmeans_test/fast:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/kmeans_test.dir/build.make tests/CMakeFiles/kmeans_test.dir/build
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/kmeans_test.dir/build.make tests/CMakeFiles/kmeans_test.dir/build
 .PHONY : kmeans_test/fast
 
 # Convenience name for target.
 tests/CMakeFiles/naivebayes_test.dir/rule:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/naivebayes_test.dir/rule
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/naivebayes_test.dir/rule
 .PHONY : tests/CMakeFiles/naivebayes_test.dir/rule
 
 # Convenience name for target.
@@ -182,12 +182,12 @@ naivebayes_test: tests/CMakeFiles/naivebayes_test.dir/rule
 
 # fast build rule for target.
 naivebayes_test/fast:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/naivebayes_test.dir/build.make tests/CMakeFiles/naivebayes_test.dir/build
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/naivebayes_test.dir/build.make tests/CMakeFiles/naivebayes_test.dir/build
 .PHONY : naivebayes_test/fast
 
 # Convenience name for target.
 tests/CMakeFiles/mapreduce_test.dir/rule:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/mapreduce_test.dir/rule
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/mapreduce_test.dir/rule
 .PHONY : tests/CMakeFiles/mapreduce_test.dir/rule
 
 # Convenience name for target.
@@ -197,12 +197,12 @@ mapreduce_test: tests/CMakeFiles/mapreduce_test.dir/rule
 
 # fast build rule for target.
 mapreduce_test/fast:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/mapreduce_test.dir/build.make tests/CMakeFiles/mapreduce_test.dir/build
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/mapreduce_test.dir/build.make tests/CMakeFiles/mapreduce_test.dir/build
 .PHONY : mapreduce_test/fast
 
 # Convenience name for target.
 tests/CMakeFiles/register_test.dir/rule:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/register_test.dir/rule
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/register_test.dir/rule
 .PHONY : tests/CMakeFiles/register_test.dir/rule
 
 # Convenience name for target.
@@ -212,12 +212,12 @@ register_test: tests/CMakeFiles/register_test.dir/rule
 
 # fast build rule for target.
 register_test/fast:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/register_test.dir/build.make tests/CMakeFiles/register_test.dir/build
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/register_test.dir/build.make tests/CMakeFiles/register_test.dir/build
 .PHONY : register_test/fast
 
 # Convenience name for target.
 tests/CMakeFiles/netcomm_test.dir/rule:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/netcomm_test.dir/rule
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/netcomm_test.dir/rule
 .PHONY : tests/CMakeFiles/netcomm_test.dir/rule
 
 # Convenience name for target.
@@ -227,12 +227,12 @@ netcomm_test: tests/CMakeFiles/netcomm_test.dir/rule
 
 # fast build rule for target.
 netcomm_test/fast:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/netcomm_test.dir/build.make tests/CMakeFiles/netcomm_test.dir/build
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/netcomm_test.dir/build.make tests/CMakeFiles/netcomm_test.dir/build
 .PHONY : netcomm_test/fast
 
 # Convenience name for target.
 tests/CMakeFiles/mapinput_test.dir/rule:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/mapinput_test.dir/rule
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/mapinput_test.dir/rule
 .PHONY : tests/CMakeFiles/mapinput_test.dir/rule
 
 # Convenience name for target.
@@ -242,12 +242,12 @@ mapinput_test: tests/CMakeFiles/mapinput_test.dir/rule
 
 # fast build rule for target.
 mapinput_test/fast:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/mapinput_test.dir/build.make tests/CMakeFiles/mapinput_test.dir/build
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/mapinput_test.dir/build.make tests/CMakeFiles/mapinput_test.dir/build
 .PHONY : mapinput_test/fast
 
 # Convenience name for target.
 tests/CMakeFiles/mapper_test.dir/rule:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/mapper_test.dir/rule
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/mapper_test.dir/rule
 .PHONY : tests/CMakeFiles/mapper_test.dir/rule
 
 # Convenience name for target.
@@ -257,12 +257,12 @@ mapper_test: tests/CMakeFiles/mapper_test.dir/rule
 
 # fast build rule for target.
 mapper_test/fast:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/mapper_test.dir/build.make tests/CMakeFiles/mapper_test.dir/build
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/mapper_test.dir/build.make tests/CMakeFiles/mapper_test.dir/build
 .PHONY : mapper_test/fast
 
 # Convenience name for target.
 tests/CMakeFiles/serializer_test.dir/rule:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/serializer_test.dir/rule
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/serializer_test.dir/rule
 .PHONY : tests/CMakeFiles/serializer_test.dir/rule
 
 # Convenience name for target.
@@ -272,12 +272,12 @@ serializer_test: tests/CMakeFiles/serializer_test.dir/rule
 
 # fast build rule for target.
 serializer_test/fast:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/serializer_test.dir/build.make tests/CMakeFiles/serializer_test.dir/build
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/serializer_test.dir/build.make tests/CMakeFiles/serializer_test.dir/build
 .PHONY : serializer_test/fast
 
 # Convenience name for target.
 tests/CMakeFiles/reducer_test.dir/rule:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/reducer_test.dir/rule
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/reducer_test.dir/rule
 .PHONY : tests/CMakeFiles/reducer_test.dir/rule
 
 # Convenience name for target.
@@ -287,12 +287,12 @@ reducer_test: tests/CMakeFiles/reducer_test.dir/rule
 
 # fast build rule for target.
 reducer_test/fast:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/reducer_test.dir/build.make tests/CMakeFiles/reducer_test.dir/build
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/reducer_test.dir/build.make tests/CMakeFiles/reducer_test.dir/build
 .PHONY : reducer_test/fast
 
 # Convenience name for target.
 tests/CMakeFiles/test.dir/rule:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/test.dir/rule
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/test.dir/rule
 .PHONY : tests/CMakeFiles/test.dir/rule
 
 # Convenience name for target.
@@ -302,12 +302,12 @@ test: tests/CMakeFiles/test.dir/rule
 
 # fast build rule for target.
 test/fast:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/test.dir/build.make tests/CMakeFiles/test.dir/build
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/test.dir/build.make tests/CMakeFiles/test.dir/build
 .PHONY : test/fast
 
 # Convenience name for target.
 tests/CMakeFiles/mapreduce_hello_test.dir/rule:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/mapreduce_hello_test.dir/rule
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/mapreduce_hello_test.dir/rule
 .PHONY : tests/CMakeFiles/mapreduce_hello_test.dir/rule
 
 # Convenience name for target.
@@ -317,7 +317,7 @@ mapreduce_hello_test: tests/CMakeFiles/mapreduce_hello_test.dir/rule
 
 # fast build rule for target.
 mapreduce_hello_test/fast:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/mapreduce_hello_test.dir/build.make tests/CMakeFiles/mapreduce_hello_test.dir/build
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/mapreduce_hello_test.dir/build.make tests/CMakeFiles/mapreduce_hello_test.dir/build
 .PHONY : mapreduce_hello_test/fast
 
 mapinput_test.o: mapinput_test.cpp.o
@@ -326,7 +326,7 @@ mapinput_test.o: mapinput_test.cpp.o
 
 # target to build an object file
 mapinput_test.cpp.o:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/mapinput_test.dir/build.make tests/CMakeFiles/mapinput_test.dir/mapinput_test.cpp.o
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/mapinput_test.dir/build.make tests/CMakeFiles/mapinput_test.dir/mapinput_test.cpp.o
 .PHONY : mapinput_test.cpp.o
 
 mapinput_test.i: mapinput_test.cpp.i
@@ -335,7 +335,7 @@ mapinput_test.i: mapinput_test.cpp.i
 
 # target to preprocess a source file
 mapinput_test.cpp.i:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/mapinput_test.dir/build.make tests/CMakeFiles/mapinput_test.dir/mapinput_test.cpp.i
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/mapinput_test.dir/build.make tests/CMakeFiles/mapinput_test.dir/mapinput_test.cpp.i
 .PHONY : mapinput_test.cpp.i
 
 mapinput_test.s: mapinput_test.cpp.s
@@ -344,7 +344,7 @@ mapinput_test.s: mapinput_test.cpp.s
 
 # target to generate assembly for a file
 mapinput_test.cpp.s:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/mapinput_test.dir/build.make tests/CMakeFiles/mapinput_test.dir/mapinput_test.cpp.s
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/mapinput_test.dir/build.make tests/CMakeFiles/mapinput_test.dir/mapinput_test.cpp.s
 .PHONY : mapinput_test.cpp.s
 
 mapper_test.o: mapper_test.cpp.o
@@ -353,7 +353,7 @@ mapper_test.o: mapper_test.cpp.o
 
 # target to build an object file
 mapper_test.cpp.o:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/mapper_test.dir/build.make tests/CMakeFiles/mapper_test.dir/mapper_test.cpp.o
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/mapper_test.dir/build.make tests/CMakeFiles/mapper_test.dir/mapper_test.cpp.o
 .PHONY : mapper_test.cpp.o
 
 mapper_test.i: mapper_test.cpp.i
@@ -362,7 +362,7 @@ mapper_test.i: mapper_test.cpp.i
 
 # target to preprocess a source file
 mapper_test.cpp.i:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/mapper_test.dir/build.make tests/CMakeFiles/mapper_test.dir/mapper_test.cpp.i
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/mapper_test.dir/build.make tests/CMakeFiles/mapper_test.dir/mapper_test.cpp.i
 .PHONY : mapper_test.cpp.i
 
 mapper_test.s: mapper_test.cpp.s
@@ -371,7 +371,7 @@ mapper_test.s: mapper_test.cpp.s
 
 # target to generate assembly for a file
 mapper_test.cpp.s:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/mapper_test.dir/build.make tests/CMakeFiles/mapper_test.dir/mapper_test.cpp.s
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/mapper_test.dir/build.make tests/CMakeFiles/mapper_test.dir/mapper_test.cpp.s
 .PHONY : mapper_test.cpp.s
 
 mapreduce_hello_test.o: mapreduce_hello_test.cpp.o
@@ -380,7 +380,7 @@ mapreduce_hello_test.o: mapreduce_hello_test.cpp.o
 
 # target to build an object file
 mapreduce_hello_test.cpp.o:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/mapreduce_hello_test.dir/build.make tests/CMakeFiles/mapreduce_hello_test.dir/mapreduce_hello_test.cpp.o
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/mapreduce_hello_test.dir/build.make tests/CMakeFiles/mapreduce_hello_test.dir/mapreduce_hello_test.cpp.o
 .PHONY : mapreduce_hello_test.cpp.o
 
 mapreduce_hello_test.i: mapreduce_hello_test.cpp.i
@@ -389,7 +389,7 @@ mapreduce_hello_test.i: mapreduce_hello_test.cpp.i
 
 # target to preprocess a source file
 mapreduce_hello_test.cpp.i:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/mapreduce_hello_test.dir/build.make tests/CMakeFiles/mapreduce_hello_test.dir/mapreduce_hello_test.cpp.i
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/mapreduce_hello_test.dir/build.make tests/CMakeFiles/mapreduce_hello_test.dir/mapreduce_hello_test.cpp.i
 .PHONY : mapreduce_hello_test.cpp.i
 
 mapreduce_hello_test.s: mapreduce_hello_test.cpp.s
@@ -398,7 +398,7 @@ mapreduce_hello_test.s: mapreduce_hello_test.cpp.s
 
 # target to generate assembly for a file
 mapreduce_hello_test.cpp.s:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/mapreduce_hello_test.dir/build.make tests/CMakeFiles/mapreduce_hello_test.dir/mapreduce_hello_test.cpp.s
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/mapreduce_hello_test.dir/build.make tests/CMakeFiles/mapreduce_hello_test.dir/mapreduce_hello_test.cpp.s
 .PHONY : mapreduce_hello_test.cpp.s
 
 mapreduce_test.o: mapreduce_test.cpp.o
@@ -407,7 +407,7 @@ mapreduce_test.o: mapreduce_test.cpp.o
 
 # target to build an object file
 mapreduce_test.cpp.o:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/mapreduce_test.dir/build.make tests/CMakeFiles/mapreduce_test.dir/mapreduce_test.cpp.o
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/mapreduce_test.dir/build.make tests/CMakeFiles/mapreduce_test.dir/mapreduce_test.cpp.o
 .PHONY : mapreduce_test.cpp.o
 
 mapreduce_test.i: mapreduce_test.cpp.i
@@ -416,7 +416,7 @@ mapreduce_test.i: mapreduce_test.cpp.i
 
 # target to preprocess a source file
 mapreduce_test.cpp.i:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/mapreduce_test.dir/build.make tests/CMakeFiles/mapreduce_test.dir/mapreduce_test.cpp.i
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/mapreduce_test.dir/build.make tests/CMakeFiles/mapreduce_test.dir/mapreduce_test.cpp.i
 .PHONY : mapreduce_test.cpp.i
 
 mapreduce_test.s: mapreduce_test.cpp.s
@@ -425,7 +425,7 @@ mapreduce_test.s: mapreduce_test.cpp.s
 
 # target to generate assembly for a file
 mapreduce_test.cpp.s:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/mapreduce_test.dir/build.make tests/CMakeFiles/mapreduce_test.dir/mapreduce_test.cpp.s
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/mapreduce_test.dir/build.make tests/CMakeFiles/mapreduce_test.dir/mapreduce_test.cpp.s
 .PHONY : mapreduce_test.cpp.s
 
 ml/kmeans_test.o: ml/kmeans_test.cpp.o
@@ -434,7 +434,7 @@ ml/kmeans_test.o: ml/kmeans_test.cpp.o
 
 # target to build an object file
 ml/kmeans_test.cpp.o:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/kmeans_test.dir/build.make tests/CMakeFiles/kmeans_test.dir/ml/kmeans_test.cpp.o
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/kmeans_test.dir/build.make tests/CMakeFiles/kmeans_test.dir/ml/kmeans_test.cpp.o
 .PHONY : ml/kmeans_test.cpp.o
 
 ml/kmeans_test.i: ml/kmeans_test.cpp.i
@@ -443,7 +443,7 @@ ml/kmeans_test.i: ml/kmeans_test.cpp.i
 
 # target to preprocess a source file
 ml/kmeans_test.cpp.i:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/kmeans_test.dir/build.make tests/CMakeFiles/kmeans_test.dir/ml/kmeans_test.cpp.i
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/kmeans_test.dir/build.make tests/CMakeFiles/kmeans_test.dir/ml/kmeans_test.cpp.i
 .PHONY : ml/kmeans_test.cpp.i
 
 ml/kmeans_test.s: ml/kmeans_test.cpp.s
@@ -452,7 +452,7 @@ ml/kmeans_test.s: ml/kmeans_test.cpp.s
 
 # target to generate assembly for a file
 ml/kmeans_test.cpp.s:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/kmeans_test.dir/build.make tests/CMakeFiles/kmeans_test.dir/ml/kmeans_test.cpp.s
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/kmeans_test.dir/build.make tests/CMakeFiles/kmeans_test.dir/ml/kmeans_test.cpp.s
 .PHONY : ml/kmeans_test.cpp.s
 
 ml/linearregression_test.o: ml/linearregression_test.cpp.o
@@ -461,7 +461,7 @@ ml/linearregression_test.o: ml/linearregression_test.cpp.o
 
 # target to build an object file
 ml/linearregression_test.cpp.o:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/linearregression_test.dir/build.make tests/CMakeFiles/linearregression_test.dir/ml/linearregression_test.cpp.o
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/linearregression_test.dir/build.make tests/CMakeFiles/linearregression_test.dir/ml/linearregression_test.cpp.o
 .PHONY : ml/linearregression_test.cpp.o
 
 ml/linearregression_test.i: ml/linearregression_test.cpp.i
@@ -470,7 +470,7 @@ ml/linearregression_test.i: ml/linearregression_test.cpp.i
 
 # target to preprocess a source file
 ml/linearregression_test.cpp.i:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/linearregression_test.dir/build.make tests/CMakeFiles/linearregression_test.dir/ml/linearregression_test.cpp.i
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/linearregression_test.dir/build.make tests/CMakeFiles/linearregression_test.dir/ml/linearregression_test.cpp.i
 .PHONY : ml/linearregression_test.cpp.i
 
 ml/linearregression_test.s: ml/linearregression_test.cpp.s
@@ -479,7 +479,7 @@ ml/linearregression_test.s: ml/linearregression_test.cpp.s
 
 # target to generate assembly for a file
 ml/linearregression_test.cpp.s:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/linearregression_test.dir/build.make tests/CMakeFiles/linearregression_test.dir/ml/linearregression_test.cpp.s
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/linearregression_test.dir/build.make tests/CMakeFiles/linearregression_test.dir/ml/linearregression_test.cpp.s
 .PHONY : ml/linearregression_test.cpp.s
 
 ml/logisticregression_test.o: ml/logisticregression_test.cpp.o
@@ -488,7 +488,7 @@ ml/logisticregression_test.o: ml/logisticregression_test.cpp.o
 
 # target to build an object file
 ml/logisticregression_test.cpp.o:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/logisticregression_test.dir/build.make tests/CMakeFiles/logisticregression_test.dir/ml/logisticregression_test.cpp.o
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/logisticregression_test.dir/build.make tests/CMakeFiles/logisticregression_test.dir/ml/logisticregression_test.cpp.o
 .PHONY : ml/logisticregression_test.cpp.o
 
 ml/logisticregression_test.i: ml/logisticregression_test.cpp.i
@@ -497,7 +497,7 @@ ml/logisticregression_test.i: ml/logisticregression_test.cpp.i
 
 # target to preprocess a source file
 ml/logisticregression_test.cpp.i:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/logisticregression_test.dir/build.make tests/CMakeFiles/logisticregression_test.dir/ml/logisticregression_test.cpp.i
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/logisticregression_test.dir/build.make tests/CMakeFiles/logisticregression_test.dir/ml/logisticregression_test.cpp.i
 .PHONY : ml/logisticregression_test.cpp.i
 
 ml/logisticregression_test.s: ml/logisticregression_test.cpp.s
@@ -506,7 +506,7 @@ ml/logisticregression_test.s: ml/logisticregression_test.cpp.s
 
 # target to generate assembly for a file
 ml/logisticregression_test.cpp.s:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/logisticregression_test.dir/build.make tests/CMakeFiles/logisticregression_test.dir/ml/logisticregression_test.cpp.s
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/logisticregression_test.dir/build.make tests/CMakeFiles/logisticregression_test.dir/ml/logisticregression_test.cpp.s
 .PHONY : ml/logisticregression_test.cpp.s
 
 ml/naivebayes_test.o: ml/naivebayes_test.cpp.o
@@ -515,7 +515,7 @@ ml/naivebayes_test.o: ml/naivebayes_test.cpp.o
 
 # target to build an object file
 ml/naivebayes_test.cpp.o:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/naivebayes_test.dir/build.make tests/CMakeFiles/naivebayes_test.dir/ml/naivebayes_test.cpp.o
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/naivebayes_test.dir/build.make tests/CMakeFiles/naivebayes_test.dir/ml/naivebayes_test.cpp.o
 .PHONY : ml/naivebayes_test.cpp.o
 
 ml/naivebayes_test.i: ml/naivebayes_test.cpp.i
@@ -524,7 +524,7 @@ ml/naivebayes_test.i: ml/naivebayes_test.cpp.i
 
 # target to preprocess a source file
 ml/naivebayes_test.cpp.i:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/naivebayes_test.dir/build.make tests/CMakeFiles/naivebayes_test.dir/ml/naivebayes_test.cpp.i
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/naivebayes_test.dir/build.make tests/CMakeFiles/naivebayes_test.dir/ml/naivebayes_test.cpp.i
 .PHONY : ml/naivebayes_test.cpp.i
 
 ml/naivebayes_test.s: ml/naivebayes_test.cpp.s
@@ -533,7 +533,7 @@ ml/naivebayes_test.s: ml/naivebayes_test.cpp.s
 
 # target to generate assembly for a file
 ml/naivebayes_test.cpp.s:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/naivebayes_test.dir/build.make tests/CMakeFiles/naivebayes_test.dir/ml/naivebayes_test.cpp.s
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/naivebayes_test.dir/build.make tests/CMakeFiles/naivebayes_test.dir/ml/naivebayes_test.cpp.s
 .PHONY : ml/naivebayes_test.cpp.s
 
 ml/reflection_test.o: ml/reflection_test.cpp.o
@@ -542,7 +542,7 @@ ml/reflection_test.o: ml/reflection_test.cpp.o
 
 # target to build an object file
 ml/reflection_test.cpp.o:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/reflection_test.dir/build.make tests/CMakeFiles/reflection_test.dir/ml/reflection_test.cpp.o
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/reflection_test.dir/build.make tests/CMakeFiles/reflection_test.dir/ml/reflection_test.cpp.o
 .PHONY : ml/reflection_test.cpp.o
 
 ml/reflection_test.i: ml/reflection_test.cpp.i
@@ -551,7 +551,7 @@ ml/reflection_test.i: ml/reflection_test.cpp.i
 
 # target to preprocess a source file
 ml/reflection_test.cpp.i:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/reflection_test.dir/build.make tests/CMakeFiles/reflection_test.dir/ml/reflection_test.cpp.i
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/reflection_test.dir/build.make tests/CMakeFiles/reflection_test.dir/ml/reflection_test.cpp.i
 .PHONY : ml/reflection_test.cpp.i
 
 ml/reflection_test.s: ml/reflection_test.cpp.s
@@ -560,7 +560,7 @@ ml/reflection_test.s: ml/reflection_test.cpp.s
 
 # target to generate assembly for a file
 ml/reflection_test.cpp.s:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/reflection_test.dir/build.make tests/CMakeFiles/reflection_test.dir/ml/reflection_test.cpp.s
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/reflection_test.dir/build.make tests/CMakeFiles/reflection_test.dir/ml/reflection_test.cpp.s
 .PHONY : ml/reflection_test.cpp.s
 
 ml/serializer_test.o: ml/serializer_test.cpp.o
@@ -569,7 +569,7 @@ ml/serializer_test.o: ml/serializer_test.cpp.o
 
 # target to build an object file
 ml/serializer_test.cpp.o:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/serializer_test.dir/build.make tests/CMakeFiles/serializer_test.dir/ml/serializer_test.cpp.o
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/serializer_test.dir/build.make tests/CMakeFiles/serializer_test.dir/ml/serializer_test.cpp.o
 .PHONY : ml/serializer_test.cpp.o
 
 ml/serializer_test.i: ml/serializer_test.cpp.i
@@ -578,7 +578,7 @@ ml/serializer_test.i: ml/serializer_test.cpp.i
 
 # target to preprocess a source file
 ml/serializer_test.cpp.i:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/serializer_test.dir/build.make tests/CMakeFiles/serializer_test.dir/ml/serializer_test.cpp.i
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/serializer_test.dir/build.make tests/CMakeFiles/serializer_test.dir/ml/serializer_test.cpp.i
 .PHONY : ml/serializer_test.cpp.i
 
 ml/serializer_test.s: ml/serializer_test.cpp.s
@@ -587,7 +587,7 @@ ml/serializer_test.s: ml/serializer_test.cpp.s
 
 # target to generate assembly for a file
 ml/serializer_test.cpp.s:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/serializer_test.dir/build.make tests/CMakeFiles/serializer_test.dir/ml/serializer_test.cpp.s
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/serializer_test.dir/build.make tests/CMakeFiles/serializer_test.dir/ml/serializer_test.cpp.s
 .PHONY : ml/serializer_test.cpp.s
 
 ml/test.o: ml/test.cpp.o
@@ -596,7 +596,7 @@ ml/test.o: ml/test.cpp.o
 
 # target to build an object file
 ml/test.cpp.o:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/test.dir/build.make tests/CMakeFiles/test.dir/ml/test.cpp.o
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/test.dir/build.make tests/CMakeFiles/test.dir/ml/test.cpp.o
 .PHONY : ml/test.cpp.o
 
 ml/test.i: ml/test.cpp.i
@@ -605,7 +605,7 @@ ml/test.i: ml/test.cpp.i
 
 # target to preprocess a source file
 ml/test.cpp.i:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/test.dir/build.make tests/CMakeFiles/test.dir/ml/test.cpp.i
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/test.dir/build.make tests/CMakeFiles/test.dir/ml/test.cpp.i
 .PHONY : ml/test.cpp.i
 
 ml/test.s: ml/test.cpp.s
@@ -614,7 +614,7 @@ ml/test.s: ml/test.cpp.s
 
 # target to generate assembly for a file
 ml/test.cpp.s:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/test.dir/build.make tests/CMakeFiles/test.dir/ml/test.cpp.s
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/test.dir/build.make tests/CMakeFiles/test.dir/ml/test.cpp.s
 .PHONY : ml/test.cpp.s
 
 netcomm_test.o: netcomm_test.cpp.o
@@ -623,7 +623,7 @@ netcomm_test.o: netcomm_test.cpp.o
 
 # target to build an object file
 netcomm_test.cpp.o:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/netcomm_test.dir/build.make tests/CMakeFiles/netcomm_test.dir/netcomm_test.cpp.o
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/netcomm_test.dir/build.make tests/CMakeFiles/netcomm_test.dir/netcomm_test.cpp.o
 .PHONY : netcomm_test.cpp.o
 
 netcomm_test.i: netcomm_test.cpp.i
@@ -632,7 +632,7 @@ netcomm_test.i: netcomm_test.cpp.i
 
 # target to preprocess a source file
 netcomm_test.cpp.i:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/netcomm_test.dir/build.make tests/CMakeFiles/netcomm_test.dir/netcomm_test.cpp.i
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/netcomm_test.dir/build.make tests/CMakeFiles/netcomm_test.dir/netcomm_test.cpp.i
 .PHONY : netcomm_test.cpp.i
 
 netcomm_test.s: netcomm_test.cpp.s
@@ -641,7 +641,7 @@ netcomm_test.s: netcomm_test.cpp.s
 
 # target to generate assembly for a file
 netcomm_test.cpp.s:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/netcomm_test.dir/build.make tests/CMakeFiles/netcomm_test.dir/netcomm_test.cpp.s
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/netcomm_test.dir/build.make tests/CMakeFiles/netcomm_test.dir/netcomm_test.cpp.s
 .PHONY : netcomm_test.cpp.s
 
 reducer_test.o: reducer_test.cpp.o
@@ -650,7 +650,7 @@ reducer_test.o: reducer_test.cpp.o
 
 # target to build an object file
 reducer_test.cpp.o:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/reducer_test.dir/build.make tests/CMakeFiles/reducer_test.dir/reducer_test.cpp.o
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/reducer_test.dir/build.make tests/CMakeFiles/reducer_test.dir/reducer_test.cpp.o
 .PHONY : reducer_test.cpp.o
 
 reducer_test.i: reducer_test.cpp.i
@@ -659,7 +659,7 @@ reducer_test.i: reducer_test.cpp.i
 
 # target to preprocess a source file
 reducer_test.cpp.i:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/reducer_test.dir/build.make tests/CMakeFiles/reducer_test.dir/reducer_test.cpp.i
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/reducer_test.dir/build.make tests/CMakeFiles/reducer_test.dir/reducer_test.cpp.i
 .PHONY : reducer_test.cpp.i
 
 reducer_test.s: reducer_test.cpp.s
@@ -668,7 +668,7 @@ reducer_test.s: reducer_test.cpp.s
 
 # target to generate assembly for a file
 reducer_test.cpp.s:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/reducer_test.dir/build.make tests/CMakeFiles/reducer_test.dir/reducer_test.cpp.s
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/reducer_test.dir/build.make tests/CMakeFiles/reducer_test.dir/reducer_test.cpp.s
 .PHONY : reducer_test.cpp.s
 
 register_test.o: register_test.cpp.o
@@ -677,7 +677,7 @@ register_test.o: register_test.cpp.o
 
 # target to build an object file
 register_test.cpp.o:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/register_test.dir/build.make tests/CMakeFiles/register_test.dir/register_test.cpp.o
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/register_test.dir/build.make tests/CMakeFiles/register_test.dir/register_test.cpp.o
 .PHONY : register_test.cpp.o
 
 register_test.i: register_test.cpp.i
@@ -686,7 +686,7 @@ register_test.i: register_test.cpp.i
 
 # target to preprocess a source file
 register_test.cpp.i:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/register_test.dir/build.make tests/CMakeFiles/register_test.dir/register_test.cpp.i
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/register_test.dir/build.make tests/CMakeFiles/register_test.dir/register_test.cpp.i
 .PHONY : register_test.cpp.i
 
 register_test.s: register_test.cpp.s
@@ -695,7 +695,7 @@ register_test.s: register_test.cpp.s
 
 # target to generate assembly for a file
 register_test.cpp.s:
-	cd /home/even/workspace/mapreduce-cpp/build && $(MAKE) -f tests/CMakeFiles/register_test.dir/build.make tests/CMakeFiles/register_test.dir/register_test.cpp.s
+	cd /home/even/workspace/simple-mapreduce/build && $(MAKE) -f tests/CMakeFiles/register_test.dir/build.make tests/CMakeFiles/register_test.dir/register_test.cpp.s
 .PHONY : register_test.cpp.s
 
 # Help Target
@@ -773,6 +773,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/even/workspace/mapreduce-cpp/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/even/workspace/simple-mapreduce/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
