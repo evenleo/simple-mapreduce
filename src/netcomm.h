@@ -65,7 +65,7 @@ private:
     void net_init();
     void net_connect(int index);
 
-    vector<struct bufferevent*> net_buffer_;
+    vector<struct bufferevent*> net_buffer_;          // libevent连接缓存
     unordered_map<struct bufferevent*, int> net_um_;
     struct event_base* net_base_ = nullptr;
     struct evconnlistener* listener_ = nullptr;

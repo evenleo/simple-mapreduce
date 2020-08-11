@@ -202,6 +202,11 @@ void MapReduce::set_spec(MapReduceSpecification* spec)
     }
 }
 
+/**
+ * MapReduce的工作入口
+ * 当index_为0时为主服务，当 index_ > 0 是为分服务
+ * 主服务会通过调用 ssh 命令远程开启分服务进程
+ */ 
 void MapReduce::start_work()
 {
     printf("Start word from %d.\n", index_);
@@ -213,13 +218,13 @@ void MapReduce::start_work()
 
     reducer_finished_cnt_ = mapper_finished_cnt_ = 0;
 
-    if (index_ > 0)
+    if (index_ > 0)  // 分服务器
     {
         printf("Checkin in %d.\n", index_);
         firstrun_ = false;
         net_->send(0, netcomm_type::LMR_CHECKIN, nullptr, 0);
     }
-    else
+    else  // 主服务器
     {
         printf("Wait for checkin in %d.\n", index_);
         if (firstrun_ && !dist_run_files())
@@ -277,7 +282,10 @@ int MapReduce::work(MapReduceResult& result)
     return 0;
 }
 
-bool run_sshcmd(const string &ip, const string &username, const string &password, const string &cmd)
+/**
+ * 执行ssh命令
+ */ 
+bool run_sshcmd(const string& ip, const string& username, const string& password, const string& cmd)
 {
     ssh_session my_ssh_session;
     ssh_channel channel;
@@ -341,8 +349,7 @@ void getpass(string& pass)
 
 bool MapReduce::dist_run_files()
 {
-    // get cwd
-    char *tmp = getcwd(nullptr, 0);
+    char *tmp = getcwd(nullptr, 0);  // 获取当前路径
     string cwd(tmp), temp, username, password;
     free(tmp);
 

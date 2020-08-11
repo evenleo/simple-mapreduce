@@ -166,6 +166,9 @@ void netcomm::send(int dst, unsigned short type, char* src, int size)
     evbuffer_unlock(outputBuffer);
 }
 
+/**
+ * 发送消息，如果之前没有连接则需要先连接
+ */ 
 void netcomm::send(int dst, unsigned short type, string data)
 {
     cout << "dst=" << dst << ", type=" << type << ", data=" << data << endl;
@@ -219,6 +222,9 @@ string hostname_to_ip(string hostname)
     }
 }
 
+/**
+ * 读配置
+ */ 
 void netcomm::readconfig(string& configfile)
 {
     ifstream f(configfile);
@@ -239,7 +245,7 @@ void netcomm::readconfig(string& configfile)
         }
         endpoints.emplace_back(make_pair(ip, port));
     }
-    // net_buffer_.resize(endpoints.size());
+    
     net_buffer_ = vector<struct bufferevent*>(endpoints.size(), nullptr);
     if (endpoints.empty())
     {
@@ -250,7 +256,11 @@ void netcomm::readconfig(string& configfile)
     f.close();
 }
 
-void netcomm::net_connect(int index)
+/**
+ * 根据index连接服务器，(服务器ip和端口在配置文件中配置)
+ * 阻塞等待，知道连接成功，对方服务器会返回netcomm_type::LMR_HELLO信息
+ */ 
+void netcomm::net_connect(int index)  
 {
     struct bufferevent* bev;
     struct sockaddr_in sin;
