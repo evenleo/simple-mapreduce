@@ -15,7 +15,8 @@ void* pthread_cb(void* data)
     pthread_data* pd = (pthread_data*) data;
     pd->cbfun_((header*)(pd->data), pd->data + sizeof(header), pd->net);
     delete[] pd->data;
-    delete (char*)data;
+    delete pd;
+    pthread_detach(pthread_self());
     return nullptr;
 }
 
@@ -48,12 +49,16 @@ void read_cb(struct bufferevent* bev, void* ctx)
             delete[] data;
             fprintf(stderr, "connected from %d\n", h.src);
         } else if (net->cbfun_) {
-            pthread_t ntid;
-            pthread_data* pd = new pthread_data;
-            pd->data = data;
-            pd->cbfun_ = net->cbfun_;
-            pd->net = net;
-            pthread_create(&ntid, nullptr, pthread_cb, pd);
+            // pthread_t ntid;
+            // pthread_data* pd = new pthread_data;
+            // pd->data = data;
+            // pd->cbfun_ = net->cbfun_;
+            // pd->net = net;
+            net->cbfun_((header*)(data), data + sizeof(header), net);
+            delete[] data;
+
+            // pthread_create(&ntid, nullptr, pthread_cb, pd);
+            // pthread_join(ntid, nullptr);
         }
     }
 }
@@ -133,6 +138,8 @@ netcomm::~netcomm()
     evconnlistener_free(listener_);
     event_base_loopexit(net_base_, nullptr);
     event_base_free(net_base_);
+    // pthread_join(pid_, nullptr);
+    // pthread_detach(pid_);
 }
 
 int netcomm::gettotalnum()
@@ -295,8 +302,10 @@ void netcomm::net_init()
 
     pthread_create(&ntid, nullptr, [](void* arg) -> void* {
                         event_base_dispatch((struct event_base*)arg);
+                        pthread_detach(pthread_self());
                         return nullptr;
                     }, net_base_);
+    // pthread_join(ntid, NULL);
 }
 
 }

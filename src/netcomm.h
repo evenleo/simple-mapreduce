@@ -47,13 +47,13 @@ enum netcomm_type {
 class netcomm
 {
     friend void listener_cb(struct evconnlistener *listener_, evutil_socket_t fd,
-                            struct sockaddr *sa, int socklen, void *ctx);
-    friend void read_cb(struct bufferevent *bev, void *ctx);
-    friend void event_cb(struct bufferevent *bev, short events, void *ctx);
+                            struct sockaddr* sa, int socklen, void* ctx);
+    friend void read_cb(struct bufferevent* bev, void* ctx);
+    friend void event_cb(struct bufferevent* bev, short events, void* ctx);
 public:
     netcomm(string configfile, int index, Func f);
     ~netcomm();
-    void send(int dst, unsigned short type, char *src, int size);
+    void send(int dst, unsigned short type, char* src, int size);
     void send(int dst, unsigned short type, string data);
     int gettotalnum();
     void wait();
@@ -61,16 +61,18 @@ public:
     vector<pair<string, uint16_t>> endpoints;
 
 private:
-    void readconfig(string &configfile);
+    void readconfig(string& configfile);
     void net_init();
     void net_connect(int index);
 
     vector<struct bufferevent*> net_buffer_;
     unordered_map<struct bufferevent*, int> net_um_;
-    struct event_base *net_base_ = nullptr;
-    struct evconnlistener *listener_ = nullptr;
+    struct event_base* net_base_ = nullptr;
+    struct evconnlistener* listener_ = nullptr;
     int myindex_;
     Func cbfun_;
+    pthread_t pid_;
+
 };
 
 }

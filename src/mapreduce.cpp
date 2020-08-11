@@ -1,11 +1,12 @@
 #include "mapreduce.h"
 #include <iostream>
 #include <memory>
+#include <mutex>
 
 namespace lmr {
 
 MapReduce* instance = nullptr;
-pthread_mutex_t mutex;
+std::mutex s_mutex;
 int number_checkin = 0, real_total = -1;
 
 void cb(header* h, char* data, netcomm* net)
@@ -15,11 +16,12 @@ void cb(header* h, char* data, netcomm* net)
     switch (h->type)
     {
         case netcomm_type::LMR_CHECKIN:
-            pthread_mutex_lock(&mutex);
-            ++number_checkin;
-            if (number_checkin % (real_total - 1) == 0)
-                instance->isready_ = true;
-            pthread_mutex_unlock(&mutex);
+            {
+                std::lock_guard<std::mutex> lk(s_mutex);
+                ++number_checkin;
+                if (number_checkin % (real_total - 1) == 0)
+                    instance->isready_ = true;
+            }
             break;
         case netcomm_type::LMR_CLOSE:
             cout << "===netcomm_type::LMR_CLOSE" << endl;
@@ -100,10 +102,11 @@ void MapReduce::reducer_done(int net_index)
 {
     bool finished = false;
 
-    pthread_mutex_lock(&mutex);
-    if (++reducer_finished_cnt_ == spec_->num_reducers)
-        finished = true;
-    pthread_mutex_unlock(&mutex);
+    {
+        std::lock_guard<std::mutex> lk(s_mutex);
+        if (++reducer_finished_cnt_ == spec_->num_reducers)
+            finished = true;
+    }
 
     if (finished)
     {
@@ -120,7 +123,7 @@ void MapReduce::mapper_done(int net_index, const vector<int>& finished_index)
 {
     int job_index = -1;
 
-    pthread_mutex_lock(&mutex);
+    s_mutex.lock();
     if (!jobs_.empty())
     {
         job_index = jobs_.front();
@@ -136,7 +139,7 @@ void MapReduce::mapper_done(int net_index, const vector<int>& finished_index)
             net_->send(reducer_net_index(i), netcomm_type::LMR_ASSIGN_REDUCER,
                     form_assign_reducer(string("tmp/tmp_%d_") + to_string(i) +".txt"));
     }
-    pthread_mutex_unlock(&mutex);
+    s_mutex.unlock();
 
     if (job_index >= 0)
         net_->send(net_index, netcomm_type::LMR_ASSIGN_MAPPER,
@@ -169,7 +172,6 @@ MapReduce::MapReduce(MapReduceSpecification* spec)
 {
     instance = this;
     setbuf(stdout, nullptr);
-    pthread_mutex_init(&mutex, nullptr);
     set_spec(spec);
 }
 
@@ -238,19 +240,20 @@ void MapReduce::start_work()
 
         printf("All checked in.\n");
         time_cnt_ = high_resolution_clock::now();
-        pthread_mutex_lock(&mutex); // protect jobs_ queue
-        for (int i = 0; i < spec_->num_mappers; ++i)
         {
-            if (jobs_.empty())
-                break;
-            else
+            std::lock_guard<std::mutex> lk(s_mutex); // protect jobs_ queue
+            for (int i = 0; i < spec_->num_mappers; ++i)
             {
-                net_->send(mapper_net_index(i), netcomm_type::LMR_ASSIGN_MAPPER,
-                            form_assign_mapper("tmp/tmp_%d_%d.txt", {jobs_.front()}));
-                jobs_.pop();
+                if (jobs_.empty())
+                    break;
+                else
+                {
+                    net_->send(mapper_net_index(i), netcomm_type::LMR_ASSIGN_MAPPER,
+                                form_assign_mapper("tmp/tmp_%d_%d.txt", {jobs_.front()}));
+                    jobs_.pop();
+                }
             }
         }
-        pthread_mutex_unlock(&mutex);
     }
 }
 
@@ -261,7 +264,6 @@ MapReduce::~MapReduce()
         net_->wait();
         delete net_;
     }
-    pthread_mutex_destroy(&mutex);
 }
 
 int MapReduce::work(MapReduceResult& result)
@@ -362,10 +364,10 @@ bool MapReduce::dist_run_files()
     for (int i = 1; i < real_total; ++i)
         um[net_->endpoints[i].first].push_back(make_pair(i, net_->endpoints[i].second));
 
-    for (auto &p : um)
+    for (auto& p : um)
     {
         string cmd = "cd " + cwd + " && mkdir -p output";
-        for (auto &p2 : p.second)
+        for (auto& p2 : p.second)
         {
             cmd += " && (./" + spec_->program_file + " " + to_string(p2.first) +
                     " >& output/output_" + to_string(p2.first) + ".txt &)";
