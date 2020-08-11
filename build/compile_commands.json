@@ -1,0 +1,127 @@
+[
+{
+  "directory": "/home/even/workspace/simple-mapreduce/build/src",
+  "command": "/usr/bin/g++   -I/home/even/private/libssh/include -I/home/even/workspace/simple-mapreduce/src   -std=c++14 -g   -o CMakeFiles/lmr.dir/netcomm.cpp.o -c /home/even/workspace/simple-mapreduce/src/netcomm.cpp",
+  "file": "/home/even/workspace/simple-mapreduce/src/netcomm.cpp"
+},
+{
+  "directory": "/home/even/workspace/simple-mapreduce/build/src",
+  "command": "/usr/bin/g++   -I/home/even/private/libssh/include -I/home/even/workspace/simple-mapreduce/src   -std=c++14 -g   -o CMakeFiles/lmr.dir/mapper.cpp.o -c /home/even/workspace/simple-mapreduce/src/mapper.cpp",
+  "file": "/home/even/workspace/simple-mapreduce/src/mapper.cpp"
+},
+{
+  "directory": "/home/even/workspace/simple-mapreduce/build/src",
+  "command": "/usr/bin/g++   -I/home/even/private/libssh/include -I/home/even/workspace/simple-mapreduce/src   -std=c++14 -g   -o CMakeFiles/lmr.dir/mapinput.cpp.o -c /home/even/workspace/simple-mapreduce/src/mapinput.cpp",
+  "file": "/home/even/workspace/simple-mapreduce/src/mapinput.cpp"
+},
+{
+  "directory": "/home/even/workspace/simple-mapreduce/build/src",
+  "command": "/usr/bin/g++   -I/home/even/private/libssh/include -I/home/even/workspace/simple-mapreduce/src   -std=c++14 -g   -o CMakeFiles/lmr.dir/hash.cpp.o -c /home/even/workspace/simple-mapreduce/src/hash.cpp",
+  "file": "/home/even/workspace/simple-mapreduce/src/hash.cpp"
+},
+{
+  "directory": "/home/even/workspace/simple-mapreduce/build/src",
+  "command": "/usr/bin/g++   -I/home/even/private/libssh/include -I/home/even/workspace/simple-mapreduce/src   -std=c++14 -g   -o CMakeFiles/lmr.dir/mapreduce.cpp.o -c /home/even/workspace/simple-mapreduce/src/mapreduce.cpp",
+  "file": "/home/even/workspace/simple-mapreduce/src/mapreduce.cpp"
+},
+{
+  "directory": "/home/even/workspace/simple-mapreduce/build/src",
+  "command": "/usr/bin/g++   -I/home/even/private/libssh/include -I/home/even/workspace/simple-mapreduce/src   -std=c++14 -g   -o CMakeFiles/lmr.dir/reducer.cpp.o -c /home/even/workspace/simple-mapreduce/src/reducer.cpp",
+  "file": "/home/even/workspace/simple-mapreduce/src/reducer.cpp"
+},
+{
+  "directory": "/home/even/workspace/simple-mapreduce/build/src",
+  "command": "/usr/bin/g++   -I/home/even/private/libssh/include -I/home/even/workspace/simple-mapreduce/src   -std=c++14 -g   -o CMakeFiles/lmr.dir/reduceinput.cpp.o -c /home/even/workspace/simple-mapreduce/src/reduceinput.cpp",
+  "file": "/home/even/workspace/simple-mapreduce/src/reduceinput.cpp"
+},
+{
+  "directory": "/home/even/workspace/simple-mapreduce/build/src",
+  "command": "/usr/bin/g++   -I/home/even/private/libssh/include -I/home/even/workspace/simple-mapreduce/src   -std=c++14 -g   -o CMakeFiles/lmr.dir/ml/naivebayes.cpp.o -c /home/even/workspace/simple-mapreduce/src/ml/naivebayes.cpp",
+  "file": "/home/even/workspace/simple-mapreduce/src/ml/naivebayes.cpp"
+},
+{
+  "directory": "/home/even/workspace/simple-mapreduce/build/src",
+  "command": "/usr/bin/g++   -I/home/even/private/libssh/include -I/home/even/workspace/simple-mapreduce/src   -std=c++14 -g   -o CMakeFiles/lmr.dir/ml/kmeans.cpp.o -c /home/even/workspace/simple-mapreduce/src/ml/kmeans.cpp",
+  "file": "/home/even/workspace/simple-mapreduce/src/ml/kmeans.cpp"
+},
+{
+  "directory": "/home/even/workspace/simple-mapreduce/build/src",
+  "command": "/usr/bin/g++   -I/home/even/private/libssh/include -I/home/even/workspace/simple-mapreduce/src   -std=c++14 -g   -o CMakeFiles/lmr.dir/ml/linear_regression.cpp.o -c /home/even/workspace/simple-mapreduce/src/ml/linear_regression.cpp",
+  "file": "/home/even/workspace/simple-mapreduce/src/ml/linear_regression.cpp"
+},
+{
+  "directory": "/home/even/workspace/simple-mapreduce/build/src",
+  "command": "/usr/bin/g++   -I/home/even/private/libssh/include -I/home/even/workspace/simple-mapreduce/src   -std=c++14 -g   -o CMakeFiles/lmr.dir/ml/logistic_regression.cpp.o -c /home/even/workspace/simple-mapreduce/src/ml/logistic_regression.cpp",
+  "file": "/home/even/workspace/simple-mapreduce/src/ml/logistic_regression.cpp"
+},
+{
+  "directory": "/home/even/workspace/simple-mapreduce/build/tests",
+  "command": "/usr/bin/g++   -I/home/even/private/libssh/include -I/home/even/workspace/simple-mapreduce/src   -std=c++14 -g   -o CMakeFiles/reflection_test.dir/ml/reflection_test.cpp.o -c /home/even/workspace/simple-mapreduce/tests/ml/reflection_test.cpp",
+  "file": "/home/even/workspace/simple-mapreduce/tests/ml/reflection_test.cpp"
+},
+{
+  "directory": "/home/even/workspace/simple-mapreduce/build/tests",
+  "command": "/usr/bin/g++   -I/home/even/private/libssh/include -I/home/even/workspace/simple-mapreduce/src   -std=c++14 -g   -o CMakeFiles/logisticregression_test.dir/ml/logisticregression_test.cpp.o -c /home/even/workspace/simple-mapreduce/tests/ml/logisticregression_test.cpp",
+  "file": "/home/even/workspace/simple-mapreduce/tests/ml/logisticregression_test.cpp"
+},
+{
+  "directory": "/home/even/workspace/simple-mapreduce/build/tests",
+  "command": "/usr/bin/g++   -I/home/even/private/libssh/include -I/home/even/workspace/simple-mapreduce/src   -std=c++14 -g   -o CMakeFiles/linearregression_test.dir/ml/linearregression_test.cpp.o -c /home/even/workspace/simple-mapreduce/tests/ml/linearregression_test.cpp",
+  "file": "/home/even/workspace/simple-mapreduce/tests/ml/linearregression_test.cpp"
+},
+{
+  "directory": "/home/even/workspace/simple-mapreduce/build/tests",
+  "command": "/usr/bin/g++   -I/home/even/private/libssh/include -I/home/even/workspace/simple-mapreduce/src   -std=c++14 -g   -o CMakeFiles/kmeans_test.dir/ml/kmeans_test.cpp.o -c /home/even/workspace/simple-mapreduce/tests/ml/kmeans_test.cpp",
+  "file": "/home/even/workspace/simple-mapreduce/tests/ml/kmeans_test.cpp"
+},
+{
+  "directory": "/home/even/workspace/simple-mapreduce/build/tests",
+  "command": "/usr/bin/g++   -I/home/even/private/libssh/include -I/home/even/workspace/simple-mapreduce/src   -std=c++14 -g   -o CMakeFiles/naivebayes_test.dir/ml/naivebayes_test.cpp.o -c /home/even/workspace/simple-mapreduce/tests/ml/naivebayes_test.cpp",
+  "file": "/home/even/workspace/simple-mapreduce/tests/ml/naivebayes_test.cpp"
+},
+{
+  "directory": "/home/even/workspace/simple-mapreduce/build/tests",
+  "command": "/usr/bin/g++   -I/home/even/private/libssh/include -I/home/even/workspace/simple-mapreduce/src   -std=c++14 -g   -o CMakeFiles/mapreduce_test.dir/mapreduce_test.cpp.o -c /home/even/workspace/simple-mapreduce/tests/mapreduce_test.cpp",
+  "file": "/home/even/workspace/simple-mapreduce/tests/mapreduce_test.cpp"
+},
+{
+  "directory": "/home/even/workspace/simple-mapreduce/build/tests",
+  "command": "/usr/bin/g++   -I/home/even/private/libssh/include -I/home/even/workspace/simple-mapreduce/src   -std=c++14 -g   -o CMakeFiles/register_test.dir/register_test.cpp.o -c /home/even/workspace/simple-mapreduce/tests/register_test.cpp",
+  "file": "/home/even/workspace/simple-mapreduce/tests/register_test.cpp"
+},
+{
+  "directory": "/home/even/workspace/simple-mapreduce/build/tests",
+  "command": "/usr/bin/g++   -I/home/even/private/libssh/include -I/home/even/workspace/simple-mapreduce/src   -std=c++14 -g   -o CMakeFiles/netcomm_test.dir/netcomm_test.cpp.o -c /home/even/workspace/simple-mapreduce/tests/netcomm_test.cpp",
+  "file": "/home/even/workspace/simple-mapreduce/tests/netcomm_test.cpp"
+},
+{
+  "directory": "/home/even/workspace/simple-mapreduce/build/tests",
+  "command": "/usr/bin/g++   -I/home/even/private/libssh/include -I/home/even/workspace/simple-mapreduce/src   -std=c++14 -g   -o CMakeFiles/mapinput_test.dir/mapinput_test.cpp.o -c /home/even/workspace/simple-mapreduce/tests/mapinput_test.cpp",
+  "file": "/home/even/workspace/simple-mapreduce/tests/mapinput_test.cpp"
+},
+{
+  "directory": "/home/even/workspace/simple-mapreduce/build/tests",
+  "command": "/usr/bin/g++   -I/home/even/private/libssh/include -I/home/even/workspace/simple-mapreduce/src   -std=c++14 -g   -o CMakeFiles/mapper_test.dir/mapper_test.cpp.o -c /home/even/workspace/simple-mapreduce/tests/mapper_test.cpp",
+  "file": "/home/even/workspace/simple-mapreduce/tests/mapper_test.cpp"
+},
+{
+  "directory": "/home/even/workspace/simple-mapreduce/build/tests",
+  "command": "/usr/bin/g++   -I/home/even/private/libssh/include -I/home/even/workspace/simple-mapreduce/src   -std=c++14 -g   -o CMakeFiles/serializer_test.dir/ml/serializer_test.cpp.o -c /home/even/workspace/simple-mapreduce/tests/ml/serializer_test.cpp",
+  "file": "/home/even/workspace/simple-mapreduce/tests/ml/serializer_test.cpp"
+},
+{
+  "directory": "/home/even/workspace/simple-mapreduce/build/tests",
+  "command": "/usr/bin/g++   -I/home/even/private/libssh/include -I/home/even/workspace/simple-mapreduce/src   -std=c++14 -g   -o CMakeFiles/reducer_test.dir/reducer_test.cpp.o -c /home/even/workspace/simple-mapreduce/tests/reducer_test.cpp",
+  "file": "/home/even/workspace/simple-mapreduce/tests/reducer_test.cpp"
+},
+{
+  "directory": "/home/even/workspace/simple-mapreduce/build/tests",
+  "command": "/usr/bin/g++   -I/home/even/private/libssh/include -I/home/even/workspace/simple-mapreduce/src   -std=c++14 -g   -o CMakeFiles/test.dir/ml/test.cpp.o -c /home/even/workspace/simple-mapreduce/tests/ml/test.cpp",
+  "file": "/home/even/workspace/simple-mapreduce/tests/ml/test.cpp"
+},
+{
+  "directory": "/home/even/workspace/simple-mapreduce/build/tests",
+  "command": "/usr/bin/g++   -I/home/even/private/libssh/include -I/home/even/workspace/simple-mapreduce/src   -std=c++14 -g   -o CMakeFiles/mapreduce_hello_test.dir/mapreduce_hello_test.cpp.o -c /home/even/workspace/simple-mapreduce/tests/mapreduce_hello_test.cpp",
+  "file": "/home/even/workspace/simple-mapreduce/tests/mapreduce_hello_test.cpp"
+}
+]

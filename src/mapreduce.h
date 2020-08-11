@@ -15,46 +15,47 @@
 #include "mapper.h"
 #include "reducer.h"
 
-namespace lmr
+namespace lmr {
+    
+using namespace std;
+using namespace std::chrono;
+
+typedef struct
 {
-    using namespace std;
-    using namespace std::chrono;
+    double timeelapsed;
+} MapReduceResult;
 
-    typedef struct
-    {
-        double timeelapsed;
-    } MapReduceResult;
+class MapReduce
+{
+    friend void cb(header* h, char* data, netcomm* net);
+public:
+    MapReduce(MapReduceSpecification* spec = nullptr);
+    ~MapReduce();
+    void set_spec(MapReduceSpecification* spec);
+    int work(MapReduceResult& result);
+    MapReduceSpecification* get_spec() { return spec_; }
 
-    class MapReduce
-    {
-        friend void cb(header* h, char* data, netcomm* net);
-    public:
-        MapReduce(MapReduceSpecification* spec = nullptr);
-        ~MapReduce();
-        void set_spec(MapReduceSpecification* spec);
-        int work(MapReduceResult& result);
-        MapReduceSpecification* get_spec() { return spec_; }
+private:
+    bool dist_run_files();
+    void start_work();
+    inline int net_mapper_index(int i);
+    inline int net_reducer_index(int i);
+    inline int mapper_net_index(int i);
+    inline int reducer_net_index(int i);
 
-    private:
-        bool dist_run_files();
-        void start_work();
-        inline int net_mapper_index(int i);
-        inline int net_reducer_index(int i);
-        inline int mapper_net_index(int i);
-        inline int reducer_net_index(int i);
+    void assign_mapper(const string& output_format, const vector<int>& input_index);
+    void mapper_done(int net_index, const vector<int>& finished_index);
+    void assign_reducer(const string& input_format);
+    void reducer_done(int net_index);
 
-        void assign_mapper(const string& output_format, const vector<int>& input_index);
-        void mapper_done(int net_index, const vector<int>& finished_index);
-        void assign_reducer(const string& input_format);
-        void reducer_done(int net_index);
+    bool stopflag_ = false, isready_ = false, firstrun_ = true, firstspec_ = true;
+    int index_, total_, mapper_finished_cnt_ = 0, reducer_finished_cnt_ = 0;
+    MapReduceSpecification* spec_ = nullptr;
+    time_point<chrono::high_resolution_clock> time_cnt_;
+    netcomm *net_ = nullptr;
+    queue<int> jobs_;
+};
 
-        bool stopflag_ = false, isready_ = false, firstrun_ = true, firstspec_ = true;
-        int index_, total_, mapper_finished_cnt_ = 0, reducer_finished_cnt_ = 0;
-        MapReduceSpecification* spec_ = nullptr;
-        time_point<chrono::high_resolution_clock> time_cnt_;
-        netcomm *net_ = nullptr;
-        queue<int> jobs_;
-    };
 }
 
 #endif //LMR_MAPREDUCE_H
