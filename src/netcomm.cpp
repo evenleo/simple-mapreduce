@@ -245,7 +245,7 @@ void netcomm::readconfig(string& configfile)
         }
         endpoints.emplace_back(make_pair(ip, port));
     }
-    
+
     net_buffer_ = vector<struct bufferevent*>(endpoints.size(), nullptr);
     if (endpoints.empty())
     {
@@ -315,6 +315,7 @@ void netcomm::net_init()
                         pthread_detach(pthread_self());
                         return nullptr;
                     }, net_base_);
+    event_base_dispatch(net_base_);
     // pthread_join(ntid, NULL);
 }
 
