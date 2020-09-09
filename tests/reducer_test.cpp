@@ -4,6 +4,7 @@
 using namespace lmr;
 using namespace std;
 
+namespace lmr {
 
 class WordCountReducer : public Reducer
 {
@@ -18,8 +19,9 @@ public:
     }
 };
 
-REGISTER_REDUCER(WordCountReducer)
 REGISTER(WordCountReducer)
+
+}
 
 int main()
 {

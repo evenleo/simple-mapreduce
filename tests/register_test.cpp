@@ -1,4 +1,4 @@
-#include "../src/register.h"
+#include "../src/reflector.h"
 #include <iostream>
 
 using namespace std;
@@ -13,6 +13,8 @@ public:
     }
 };
 
+#define A_CREATE(name) reinterpret_cast<A*>(Reflector::Instance().CreateObject(name))
+
 class B : public A
 {
 public:
@@ -22,12 +24,12 @@ public:
     }
 };
 
-BASE_CLASS_REGISTER(A)
-CHILD_CLASS_REGISTER(A, B)
+
+REGISTER(B)
 
 int main()
 {
-    A* b = CHILD_CLASS_CREATOR(A, "B");
+    A* b = A_CREATE("B");
     b->print("abc");
     delete b;
     return 0;

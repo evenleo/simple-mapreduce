@@ -22,7 +22,7 @@ void cb(header* h, char* data, netcomm* net)
 
 int main(int argc, char *argv[])
 {
-    int index = 1;
+    int index = 0;
     netcomm net("config.txt", index, cb);
     if (index)
     {

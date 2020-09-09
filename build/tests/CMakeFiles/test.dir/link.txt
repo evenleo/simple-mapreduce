@@ -1,1 +1,0 @@
-/usr/bin/g++   -std=c++14 -g  -rdynamic CMakeFiles/test.dir/ml/test.cpp.o  -o test   -L/usr/local/lib  -L/home/even/private/libssh/lib 

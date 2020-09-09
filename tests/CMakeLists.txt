@@ -23,17 +23,17 @@ target_link_libraries(mapreduce_hello_test ${LIBS})
 add_executable(mapreduce_test mapreduce_test.cpp)
 target_link_libraries(mapreduce_test ${LIBS})
 
-add_executable(naivebayes_test ml/naivebayes_test.cpp)
-target_link_libraries(naivebayes_test ${LIBS})
-
-add_executable(kmeans_test ml/kmeans_test.cpp)
-target_link_libraries(kmeans_test ${LIBS})
-
-add_executable(linearregression_test ml/linearregression_test.cpp)
-target_link_libraries(linearregression_test ${LIBS})
-
-add_executable(logisticregression_test ml/logisticregression_test.cpp)
-target_link_libraries(logisticregression_test ${LIBS})
+# add_executable(naivebayes_test ml/naivebayes_test.cpp)
+# target_link_libraries(naivebayes_test ${LIBS})
+# 
+# add_executable(kmeans_test ml/kmeans_test.cpp)
+# target_link_libraries(kmeans_test ${LIBS})
+# 
+# add_executable(linearregression_test ml/linearregression_test.cpp)
+# target_link_libraries(linearregression_test ${LIBS})
+# 
+# add_executable(logisticregression_test ml/logisticregression_test.cpp)
+# target_link_libraries(logisticregression_test ${LIBS})
 
 add_executable(serializer_test ml/serializer_test.cpp)
 add_executable(reflection_test ml/reflection_test.cpp)

@@ -9,7 +9,8 @@ namespace lmr
 
     typedef unsigned int (*HashFunction)(const std::string&);
 
-    unsigned int JSHash(const std::string& str);
+    unsigned int JSHash(const std::string &str);
+
 }
 
 #endif //LMR_HASH_H

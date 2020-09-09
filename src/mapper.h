@@ -7,7 +7,6 @@
 #include <chrono>
 #include <fstream>
 #include <algorithm>
-#include "register.h"
 #include "mapinput.h"
 #include "hash.h"
 #include "reflector.h"
@@ -43,16 +42,8 @@ private:
     vector<multiset<pair<string, string>>> out_;
 };
 
-BASE_CLASS_REGISTER(Mapper)
-
-#define REGISTER_MAPPER(mapper_name) \
-    CHILD_CLASS_REGISTER(Mapper,mapper_name)
-
-#define CREATE_MAPPER(mapper_name)   \
-    CHILD_CLASS_CREATOR(Mapper,mapper_name)
-}
-
 #define MAPPER_CREATE(name) reinterpret_cast<Mapper*>(Reflector::Instance().CreateObject(name))
 
+}
 
 #endif //LMR_MAPPER_H

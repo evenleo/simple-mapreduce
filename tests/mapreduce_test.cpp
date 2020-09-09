@@ -3,6 +3,7 @@
 using namespace lmr;
 using namespace std;
 
+namespace lmr {
 
 class WordCountMapper : public Mapper
 {
@@ -43,7 +44,9 @@ public:
 
 REGISTER(WordCountReducer)
 
+}
 
+using namespace lmr;
 
 int main(int argc, char **argv)
 {

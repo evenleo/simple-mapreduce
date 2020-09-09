@@ -32,7 +32,8 @@ void Mapper::mapwork()
     combine();
 
     output();
-    fprintf(stderr, "Map Compute Time: %f.\n", chrono::duration_cast<chrono::duration<double>>(chrono::high_resolution_clock::now() - start).count());
+    fprintf(stderr, "Map Compute Time: %f.\n", 
+        chrono::duration_cast<chrono::duration<double>>(chrono::high_resolution_clock::now() - start).count());
 }
 
 void Mapper::output()

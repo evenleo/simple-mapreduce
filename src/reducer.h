@@ -7,7 +7,6 @@
 #include <fstream>
 #include <algorithm>
 #include <map>
-#include "register.h"
 #include "reduceinput.h"
 #include "hash.h"
 #include "reflector.h"
@@ -39,17 +38,10 @@ private:
     ReduceInput* reduceinput_ = nullptr;
 };
 
-BASE_CLASS_REGISTER(Reducer)
-
-
-#define REGISTER_REDUCER(reducer_name) \
-    CHILD_CLASS_REGISTER(Reducer,reducer_name)
-
-#define CREATE_REDUCER(reducer_name)   \
-    CHILD_CLASS_CREATOR(Reducer,reducer_name)
-
 #define REDUCER_CREATE(name) reinterpret_cast<Reducer*>(Reflector::Instance().CreateObject(name))  
 
 }
+
+
 
 #endif //LMR_REDUCER_H
