@@ -54,9 +54,7 @@
 						9,
 						10,
 						11,
-						12,
-						13,
-						14
+						12
 					]
 				}
 			],
@@ -85,9 +83,7 @@
 						9,
 						10,
 						11,
-						12,
-						13,
-						14
+						12
 					]
 				}
 			],
@@ -95,106 +91,92 @@
 			[
 				{
 					"directoryIndex" : 2,
-					"id" : "kmeans_test::@a44f0ac069e85531cdee",
-					"jsonFile" : "target-kmeans_test-Debug-412be46f042b0771f5be.json",
-					"name" : "kmeans_test",
+					"id" : "epoller_client_test::@a44f0ac069e85531cdee",
+					"jsonFile" : "target-epoller_client_test-Debug-1e82ad1b6d97ca9956dd.json",
+					"name" : "epoller_client_test",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 2,
-					"id" : "linearregression_test::@a44f0ac069e85531cdee",
-					"jsonFile" : "target-linearregression_test-Debug-e7ee7e55f431750c9e91.json",
-					"name" : "linearregression_test",
+					"id" : "epoller_server_test::@a44f0ac069e85531cdee",
+					"jsonFile" : "target-epoller_server_test-Debug-18081da36f27ecc31345.json",
+					"name" : "epoller_server_test",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 1,
 					"id" : "lmr::@145eef247bfb46b6828c",
-					"jsonFile" : "target-lmr-Debug-aad8bcbb19e79764a480.json",
+					"jsonFile" : "target-lmr-Debug-1fc238ad0b6e0c06424e.json",
 					"name" : "lmr",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 2,
-					"id" : "logisticregression_test::@a44f0ac069e85531cdee",
-					"jsonFile" : "target-logisticregression_test-Debug-1cdf8cf4676801cf66c4.json",
-					"name" : "logisticregression_test",
-					"projectIndex" : 0
-				},
-				{
-					"directoryIndex" : 2,
 					"id" : "mapinput_test::@a44f0ac069e85531cdee",
-					"jsonFile" : "target-mapinput_test-Debug-6dc5b7e2f2bd3f58928a.json",
+					"jsonFile" : "target-mapinput_test-Debug-94abd2a45cc09bf3f1b6.json",
 					"name" : "mapinput_test",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 2,
 					"id" : "mapper_test::@a44f0ac069e85531cdee",
-					"jsonFile" : "target-mapper_test-Debug-6715ea76a8cb23d085ec.json",
+					"jsonFile" : "target-mapper_test-Debug-f53f4c8aa7ed0d817aa9.json",
 					"name" : "mapper_test",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 2,
 					"id" : "mapreduce_hello_test::@a44f0ac069e85531cdee",
-					"jsonFile" : "target-mapreduce_hello_test-Debug-39eb7808a80e74b24b54.json",
+					"jsonFile" : "target-mapreduce_hello_test-Debug-748ae65326a3d87530eb.json",
 					"name" : "mapreduce_hello_test",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 2,
 					"id" : "mapreduce_test::@a44f0ac069e85531cdee",
-					"jsonFile" : "target-mapreduce_test-Debug-1595b1752a8678d7230d.json",
+					"jsonFile" : "target-mapreduce_test-Debug-af47477af8aa5fb81589.json",
 					"name" : "mapreduce_test",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 2,
-					"id" : "naivebayes_test::@a44f0ac069e85531cdee",
-					"jsonFile" : "target-naivebayes_test-Debug-665295c0213dedc8cc1c.json",
-					"name" : "naivebayes_test",
-					"projectIndex" : 0
-				},
-				{
-					"directoryIndex" : 2,
 					"id" : "netcomm_test::@a44f0ac069e85531cdee",
-					"jsonFile" : "target-netcomm_test-Debug-26213a2a5923fb246211.json",
+					"jsonFile" : "target-netcomm_test-Debug-c2834d114f573af6ba99.json",
 					"name" : "netcomm_test",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 2,
 					"id" : "reducer_test::@a44f0ac069e85531cdee",
-					"jsonFile" : "target-reducer_test-Debug-1f7c9aa313b7e6f472d7.json",
+					"jsonFile" : "target-reducer_test-Debug-e2b024ee41bf21b33c81.json",
 					"name" : "reducer_test",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 2,
 					"id" : "reflection_test::@a44f0ac069e85531cdee",
-					"jsonFile" : "target-reflection_test-Debug-2367feffa6b05b3e6620.json",
+					"jsonFile" : "target-reflection_test-Debug-30ce7c1ca43e2a963f81.json",
 					"name" : "reflection_test",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 2,
 					"id" : "register_test::@a44f0ac069e85531cdee",
-					"jsonFile" : "target-register_test-Debug-dc57e050159825d414b0.json",
+					"jsonFile" : "target-register_test-Debug-fda9efd3ea06e85a4715.json",
 					"name" : "register_test",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 2,
 					"id" : "serializer_test::@a44f0ac069e85531cdee",
-					"jsonFile" : "target-serializer_test-Debug-ea640895914802a57178.json",
+					"jsonFile" : "target-serializer_test-Debug-94a228b0b7b1b474366d.json",
 					"name" : "serializer_test",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 2,
 					"id" : "test::@a44f0ac069e85531cdee",
-					"jsonFile" : "target-test-Debug-9a275157fae5fcfa6b80.json",
+					"jsonFile" : "target-test-Debug-a40390d952408bc91a79.json",
 					"name" : "test",
 					"projectIndex" : 0
 				}
@@ -204,8 +186,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/even/workspace/simple-mapreduce/build",
-		"source" : "/home/even/workspace/simple-mapreduce"
+		"build" : "/home/evenleo/workspace/simple-mapreduce/build",
+		"source" : "/home/evenleo/workspace/simple-mapreduce"
 	},
 	"version" : 
 	{

@@ -39,8 +39,12 @@ add_executable(serializer_test ml/serializer_test.cpp)
 add_executable(reflection_test ml/reflection_test.cpp)
 
 add_executable(epoller_server_test epoller_server_test.cpp ../src/epoller.cpp)
+target_link_libraries(epoller_server_test pthread)
+
 
 add_executable(epoller_client_test epoller_client_test.cpp ../src/epoller.cpp)
+target_link_libraries(epoller_client_test pthread)
+
 
 
 

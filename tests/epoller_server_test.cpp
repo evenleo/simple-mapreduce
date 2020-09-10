@@ -5,12 +5,9 @@
 
 namespace lmr {
 
-class ClientCallback: public EpollCallback {
+class ClientCallback: public Callback {
 public:
-	typedef std::shared_ptr<ClientCallback> Ptr;
-	
-	ClientCallback(Epoller& epoll) : epoll_(epoll) {}
-
+	ClientCallback(Epoller::ptr epoll) : epoll_(epoll) {}
 	virtual void doEvent(struct epoll_event* event) {
         int clientfd = event->data.fd;
         if (event->events & EPOLLIN)
@@ -19,10 +16,7 @@ public:
 			if (n <= 0) {
 				std::cout << "close " << clientfd << std::endl;
 				::close(clientfd);
-				epoll_.removeEvent(clientfd);
-				ClientCallback* cltCallback = (ClientCallback*)event->data.ptr;
-				event->data.ptr=NULL;
-				delete cltCallback;
+				epoll_->removeEvent(clientfd);
 				return;
 			}
 			buff[n] = '\0';
@@ -31,16 +25,22 @@ public:
         }
     }
 private:
-	Epoller& epoll_;
+	Epoller::ptr epoll_;
 	char buff[1024];
 };
 
-class TcpServer: public EpollCallback {
+class TcpServer: public Callback, public std::enable_shared_from_this<TcpServer> {
 public:
-	typedef std::shared_ptr<TcpServer> Ptr;
-
-	TcpServer(Epoller& epoll) : epoll_(epoll) {}
-
+	typedef std::shared_ptr<TcpServer> ptr;
+	TcpServer(int port) : port_(port)
+	{
+		epoll_ = std::make_shared<Epoller>();
+	}
+	void run() 
+	{
+		epoll_->initServer(port_, shared_from_this());
+		epoll_->start(10, -1);
+	}
 	virtual void doEvent(struct epoll_event* event) {
         int listenfd = event->data.fd;
         struct sockaddr_in clientaddr;
@@ -52,13 +52,12 @@ public:
 		}
 		char *str = inet_ntoa(clientaddr.sin_addr);
 		std::cout << "accept a connection from " << str << std::endl;
-		std::shared_ptr<EpollCallback> client = std::make_shared<ClientCallback>(epoll_);
-		clients_[clientfd] = client;
-		epoll_.addEvent(clientfd, EPOLLIN | EPOLLET, client.get());
+		Callback::ptr client = std::make_shared<ClientCallback>(epoll_);
+		epoll_->addEvent(clientfd, EPOLLIN | EPOLLET, client);
 	}
 private:
-	Epoller& epoll_;
-	std::unordered_map<int, EpollCallback::Ptr> clients_; 
+	int port_;
+	Epoller::ptr epoll_;
 };
 
 }
@@ -67,11 +66,11 @@ using namespace lmr;
 
 int main(int argc, char** argv)
 {
+    TcpServer::ptr server = std::make_shared<TcpServer>(7778);
+	server->run();
 
-    lmr::Epoller epoller;
-    TcpServer::Ptr server = std::make_shared<TcpServer>(epoller);
-    epoller.initServer(7778, server.get());
-    epoller.working(10, -1);
+	getchar();
+   
     return 0;
 }
 

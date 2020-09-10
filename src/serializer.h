@@ -9,6 +9,7 @@
 #include <algorithm>
 #include <memory>
 #include <string.h>
+#include <initializer_list>
 
 namespace even {
 
@@ -73,7 +74,8 @@ public:
     template<typename Tuple, std::size_t... I>
 	Tuple get_tuple(std::index_sequence<I...>) {
 		Tuple t;
-		((getv<Tuple, I>(*this, t)), ...);
+		// ((getv<Tuple, I>(*this, t)), ...);
+        std::initializer_list<int>{(getv<Tuple, I>(*this, t), 0)...};
 		return t;
 	}
 

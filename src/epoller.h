@@ -26,36 +26,35 @@ protected:
 	~Noncopyable() = default;
 };
 
-class EpollCallback {
+class Callback {
 public:
-	typedef std::shared_ptr<EpollCallback> Ptr;
-	EpollCallback() {};
-	virtual ~EpollCallback() {};
-	virtual void doEvent(struct epoll_event*) {};
+	typedef std::shared_ptr<Callback> ptr;
+	virtual ~Callback() {};
+	virtual void doEvent(struct epoll_event*) = 0;
 };
-
 
 class Epoller : public Noncopyable {
 public:
-    typedef std::shared_ptr<Epoller> Ptr;
+    typedef std::shared_ptr<Epoller> ptr;
 
     Epoller();
-    ~Epoller() {}
+    ~Epoller();
 
-    int initServer(int port, EpollCallback* cb);
-    void working(int maxEvents, int timeout);
-    int connectServer(std::string ip, int port, EpollCallback* cb);
+    int initServer(int port, Callback::ptr cb);
+    void start(int maxEvents, int timeout);
+    int connectServer(std::string ip, int port, Callback::ptr cb);
 
-    void addEvent(int fd, int events, EpollCallback* cb);
+    void addEvent(int fd, int events, Callback::ptr cb);
     void removeEvent(int fd);
-    void modifyEvent(int fd, int events, EpollCallback* cb);
+    void modifyEvent(int fd, int events, Callback::ptr cb);
 
-    static int send(int fd, const char* data, int size);
 private:
+    void eventLoop(int maxEvents, int timeout);
     void setnonblocking(int fd);
 
 private:
     int epfd_ = -1;
+	std::unordered_map<int, Callback::ptr> callbacks_; 
 };
 
 }

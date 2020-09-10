@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "tests/linearregression_test"
+			"path" : "tests/reducer_test"
 		}
 	],
 	"backtrace" : 1,
@@ -28,7 +28,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 32,
+				"line" : 17,
 				"parent" : 0
 			},
 			{
@@ -43,7 +43,7 @@
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 33,
+				"line" : 18,
 				"parent" : 0
 			},
 			{
@@ -67,11 +67,11 @@
 			[
 				{
 					"backtrace" : 5,
-					"path" : "/home/even/private/libssh/include"
+					"path" : "/home/evenleo/private/libssh/include"
 				},
 				{
 					"backtrace" : 5,
-					"path" : "/home/even/workspace/simple-mapreduce/src"
+					"path" : "/home/evenleo/workspace/simple-mapreduce/src"
 				}
 			],
 			"language" : "CXX",
@@ -88,7 +88,7 @@
 			"id" : "lmr::@145eef247bfb46b6828c"
 		}
 	],
-	"id" : "linearregression_test::@a44f0ac069e85531cdee",
+	"id" : "reducer_test::@a44f0ac069e85531cdee",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -108,11 +108,11 @@
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "-L/home/even/private/libssh/lib",
+				"fragment" : "-L/home/evenleo/private/libssh/lib",
 				"role" : "libraryPath"
 			},
 			{
-				"fragment" : "-Wl,-rpath,/usr/local/lib:/home/even/private/libssh/lib",
+				"fragment" : "-Wl,-rpath,/usr/local/lib:/home/evenleo/private/libssh/lib",
 				"role" : "libraries"
 			},
 			{
@@ -143,8 +143,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "linearregression_test",
-	"nameOnDisk" : "linearregression_test",
+	"name" : "reducer_test",
+	"nameOnDisk" : "reducer_test",
 	"paths" : 
 	{
 		"build" : "tests",
@@ -165,7 +165,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "tests/ml/linearregression_test.cpp",
+			"path" : "tests/reducer_test.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

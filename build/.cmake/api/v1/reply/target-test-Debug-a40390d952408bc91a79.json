@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "tests/mapinput_test"
+			"path" : "tests/test"
 		}
 	],
 	"backtrace" : 1,
@@ -12,7 +12,6 @@
 		[
 			"add_executable",
 			"link_directories",
-			"target_link_libraries",
 			"include_directories"
 		],
 		"files" : 
@@ -28,7 +27,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 11,
+				"line" : 51,
 				"parent" : 0
 			},
 			{
@@ -42,12 +41,6 @@
 			},
 			{
 				"command" : 2,
-				"file" : 0,
-				"line" : 12,
-				"parent" : 0
-			},
-			{
-				"command" : 3,
 				"file" : 1,
 				"line" : 14,
 				"parent" : 2
@@ -66,12 +59,12 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 5,
-					"path" : "/home/even/private/libssh/include"
+					"backtrace" : 4,
+					"path" : "/home/evenleo/private/libssh/include"
 				},
 				{
-					"backtrace" : 5,
-					"path" : "/home/even/workspace/simple-mapreduce/src"
+					"backtrace" : 4,
+					"path" : "/home/evenleo/workspace/simple-mapreduce/src"
 				}
 			],
 			"language" : "CXX",
@@ -81,14 +74,7 @@
 			]
 		}
 	],
-	"dependencies" : 
-	[
-		{
-			"backtrace" : 4,
-			"id" : "lmr::@145eef247bfb46b6828c"
-		}
-	],
-	"id" : "mapinput_test::@a44f0ac069e85531cdee",
+	"id" : "test::@a44f0ac069e85531cdee",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -108,43 +94,14 @@
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "-L/home/even/private/libssh/lib",
+				"fragment" : "-L/home/evenleo/private/libssh/lib",
 				"role" : "libraryPath"
-			},
-			{
-				"fragment" : "-Wl,-rpath,/usr/local/lib:/home/even/private/libssh/lib",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 4,
-				"fragment" : "../src/liblmr.a",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 4,
-				"fragment" : "-levent_core",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 4,
-				"fragment" : "-levent_pthreads",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 4,
-				"fragment" : "-lpthread",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 4,
-				"fragment" : "-lssh",
-				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"
 	},
-	"name" : "mapinput_test",
-	"nameOnDisk" : "mapinput_test",
+	"name" : "test",
+	"nameOnDisk" : "test",
 	"paths" : 
 	{
 		"build" : "tests",
@@ -165,7 +122,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "tests/mapinput_test.cpp",
+			"path" : "tests/ml/test.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
