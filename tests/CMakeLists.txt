@@ -38,6 +38,11 @@ target_link_libraries(mapreduce_test ${LIBS})
 add_executable(serializer_test ml/serializer_test.cpp)
 add_executable(reflection_test ml/reflection_test.cpp)
 
+add_executable(epoller_server_test epoller_server_test.cpp ../src/epoller.cpp)
+
+add_executable(epoller_client_test epoller_client_test.cpp ../src/epoller.cpp)
+
+
 
 add_executable(test ml/test.cpp)
 
